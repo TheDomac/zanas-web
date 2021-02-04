@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import { Input, Button } from "@chakra-ui/react";
 
 import { routes } from "../../consts/routes";
+import { useRegisterMutation } from "../../generated/graphql";
 
 const Register = () => {
+  const [, register] = useRegisterMutation();
   return (
     <div>
       You're on register
@@ -17,8 +19,11 @@ const Register = () => {
         </ul>
       </nav>
       <Formik
-        onSubmit={(values) => {
-          console.log(values);
+        onSubmit={async (values) => {
+          await register({
+            username: values.username,
+            password: values.password,
+          });
         }}
         initialValues={{ username: "a", password: "b" }}
       >
