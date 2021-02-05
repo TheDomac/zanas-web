@@ -1,33 +1,32 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { createClient, Provider } from "urql";
+
+import Navigation from "./common/components/Navigation";
 
 import Home from "./scenes/home";
 import Register from "./scenes/register";
+import Login from "./scenes/login";
 
 import { routes } from "./consts/routes";
 
-const client = createClient({
-  url: "http://localhost:4000/graphql",
-  fetchOptions: {
-    credentials: "include",
-  },
-});
-
 const App = () => {
   return (
-    <Provider value={client}>
+    <>
       <Router>
+        <Navigation />
         <Switch>
           <Route path={routes.REGISTER}>
             <Register />
+          </Route>
+          <Route path={routes.LOGIN}>
+            <Login />
           </Route>
           <Route path={routes.HOME}>
             <Home />
           </Route>
         </Switch>
       </Router>
-    </Provider>
+    </>
   );
 };
 

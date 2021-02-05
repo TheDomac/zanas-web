@@ -1,11 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./App";
+import { createClient, Provider } from "urql";
+import { ChakraProvider } from "@chakra-ui/react";
+
 import reportWebVitals from "./reportWebVitals";
+import App from "./App";
+
+const client = createClient({
+  url: "http://localhost:4000/graphql",
+  fetchOptions: {
+    credentials: "include",
+  },
+});
+
+const AppWithProviders = () => (
+  <Provider value={client}>
+    <ChakraProvider>
+      <App />
+    </ChakraProvider>
+  </Provider>
+);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <AppWithProviders />
   </React.StrictMode>,
   document.getElementById("root")
 );

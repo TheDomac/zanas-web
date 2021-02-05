@@ -4,34 +4,34 @@ import { Button } from "@chakra-ui/react";
 import { useHistory } from "react-router";
 
 import { routes } from "../../consts/routes";
-import { useRegisterMutation } from "../../graphql/generated/graphql";
+import { useLoginMutation } from "../../graphql/generated/graphql";
 
 import InputField from "../../common/components/InputField";
 import toErrorMap from "../../utils/toErrorMap";
 
-const Register = () => {
-  const [, register] = useRegisterMutation();
+const Login = () => {
+  const [, login] = useLoginMutation();
   const history = useHistory();
 
   const handleSubmit = async (
     values: { username: string; password: string },
     { setErrors }: any
   ) => {
-    const res = await register({
+    const res = await login({
       username: values.username,
       password: values.password,
     });
 
-    if (res.data?.register.errors) {
-      setErrors(toErrorMap(res.data.register.errors));
-    } else if (res.data?.register.user) {
+    if (res.data?.login.errors) {
+      setErrors(toErrorMap(res.data.login.errors));
+    } else if (res.data?.login.user) {
       history.push(routes.HOME);
     }
   };
 
   return (
     <div>
-      You're on register
+      You're on login
       <Formik
         onSubmit={handleSubmit}
         initialValues={{ username: "a", password: "b" }}
@@ -57,7 +57,7 @@ const Register = () => {
               placeholder="password"
               mb={5}
             />
-            <Button type="submit">Register</Button>
+            <Button type="submit">Login</Button>
           </Form>
         )}
       </Formik>
@@ -65,4 +65,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
