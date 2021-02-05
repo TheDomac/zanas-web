@@ -1,18 +1,22 @@
 import React from "react";
-import { HStack, Link as TextLink } from "@chakra-ui/react";
+import { HStack, Link as TextLink, Text } from "@chakra-ui/react";
 
 import { Link } from "react-router-dom";
 import { routes } from "../../consts/routes";
-import { useMeQuery } from "../../graphql/generated/graphql";
+import { useMeQuery, useLogoutMutation } from "../../graphql/generated/graphql";
 
 const Navigation = () => {
   const [{ data, fetching }] = useMeQuery();
+  const [, logout] = useLogoutMutation();
 
-  const handleLogOutClick = () => {};
+  const handleLogOutClick = () => {
+    logout();
+    location.reload(); // todo: no dis
+  };
 
   return (
     <HStack background="tomato" padding={4} justify="end">
-      {fetching && "Loading..."}
+      {fetching && <TextLink>Loading...</TextLink>}
       {!fetching && !data?.me && (
         <>
           <Link to={routes.HOME}>Home</Link>
