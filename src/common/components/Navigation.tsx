@@ -11,7 +11,6 @@ const Navigation = () => {
 
   const handleLogOutClick = () => {
     logout();
-    location.reload(); // todo: no dis
   };
 
   return (
