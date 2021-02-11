@@ -1,18 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "urql";
 import { ChakraProvider } from "@chakra-ui/react";
 
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
-import client from "./utils/urqlClient";
 
 const AppWithProviders = () => (
-  <Provider value={client}>
-    <ChakraProvider>
-      <App />
-    </ChakraProvider>
-  </Provider>
+  <ChakraProvider>
+    <App />
+  </ChakraProvider>
 );
 
 ReactDOM.render(
