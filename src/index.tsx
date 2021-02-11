@@ -4,9 +4,11 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
+import GlobalStyles from "./common/styles/globalStyles";
 
 const AppWithProviders = () => (
   <ChakraProvider>
+    <GlobalStyles />
     <App />
   </ChakraProvider>
 );
