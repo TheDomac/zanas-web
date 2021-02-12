@@ -1,7 +1,9 @@
 import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import cookies from "js-cookie";
-import { Input, Button } from "@chakra-ui/react";
+
+import InputField from "@kiwicom/orbit-components/lib/InputField";
+import Button from "@kiwicom/orbit-components/lib/Button";
 
 import { useToggle } from "../../utils/useToggle";
 import { cookiesTypes } from "../../consts/cookies";
@@ -56,7 +58,7 @@ const Home = () => {
 
   const openNewShortcut = () => {
     isNewShortcutOpen.setOn();
-    // todo inputName.current.focus();
+    inputName.current.focus();
   };
 
   const addNewShortcut = (e: any) => {
@@ -97,20 +99,20 @@ const Home = () => {
         <AddnewShortcutWrapper>
           {isNewShortcutOpen.isOn ? (
             <form onSubmit={addNewShortcut}>
-              <Input
+              <InputField
                 ref={inputName}
                 value={newShortcutName}
                 placeholder="Name"
                 onChange={changeName}
               />
-              <Input
+              <InputField
                 value={newShortcutUrl}
                 placeholder="https://example.com/"
                 onChange={changeUrl}
               />
 
               <FormSubmitWrapper>
-                <Button type="submit">Add</Button>
+                <Button submit>Add</Button>
                 <Button onClick={isNewShortcutOpen.setOff}>Close</Button>
               </FormSubmitWrapper>
             </form>

@@ -14,10 +14,10 @@ html {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #1f7bb6 !important;
-    background-image: linear-gradient(120deg, rgba(245,251,238,1) 0%, rgba(164,219,188,1) 35%, rgba(16,94,159,1) 100%) !important;
-    background-image: url(${background}) !important;
-    background-size: cover !important;
+    background: #1f7bb6;
+    background-image: linear-gradient(120deg, rgba(245,251,238,1) 0%, rgba(164,219,188,1) 35%, rgba(16,94,159,1) 100%);
+    background-image: url(${background});
+    background-size: cover;
   }
   
   code {

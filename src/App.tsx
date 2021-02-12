@@ -2,7 +2,8 @@ import React from "react";
 import cookies from "js-cookie";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import styled from "styled-components";
-import { Alert, CloseButton, AlertDescription } from "@chakra-ui/react";
+
+import Alert from "@kiwicom/orbit-components/lib/Alert";
 
 import Home from "./scenes/home";
 
@@ -46,18 +47,14 @@ const App = () => {
       </Router>
       {cookiesNotification.isOn && (
         <CookiesAlertWrapper>
-          <Alert status="warning" paddingTop="40px">
-            <AlertDescription>
-              This site uses cookies to improve your experience. If you agree to
-              our use of cookies, please close this message and continue to use
-              this site.
-            </AlertDescription>
-            <CloseButton
-              position="absolute"
-              onClick={setCookiesNotificationAsShown}
-              right="8px"
-              top="8px"
-            />
+          <Alert
+            type="warning"
+            closable
+            onClose={setCookiesNotificationAsShown}
+          >
+            This site uses cookies to improve your experience. If you agree to
+            our use of cookies, please close this message and continue to use
+            this site.
           </Alert>
         </CookiesAlertWrapper>
       )}
