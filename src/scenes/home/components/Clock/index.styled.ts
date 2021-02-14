@@ -7,6 +7,11 @@ export const ToggleButtonWrapper = styled.div`
   visibility: hidden;
   opacity: 0;
   transition: 300ms;
+  transition-delay: 500ms;
+
+  svg {
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.6));
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -20,12 +25,8 @@ export const Wrapper = styled.div`
   &:hover {
     ${ToggleButtonWrapper} {
       visibility: visible;
-      opacity: 0.4;
-
-      &:hover {
-        cursor: pointer;
-        opacity: 1;
-      }
+      opacity: 1;
+      cursor: pointer;
     }
   }
 `;
@@ -37,9 +38,4 @@ export const Time = styled.div`
 export const DateWrapper = styled.div`
   font-size: 30px;
   color: #eee;
-`;
-export const TooltipWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  right: 0;
 `;

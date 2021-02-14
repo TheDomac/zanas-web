@@ -10,7 +10,6 @@ import { nth } from "../../../../utils/clock";
 
 import {
   Wrapper,
-  TooltipWrapper,
   ToggleButtonWrapper,
   Time,
   DateWrapper,
@@ -31,7 +30,6 @@ const Clock = () => {
   }, []);
 
   const toggleClockFormat = () => {
-    console.log("wat");
     const newFormat =
       format === formats.HOURS_MINUTES
         ? formats.HOURS_MINUTES_AM_PM
@@ -48,13 +46,11 @@ const Clock = () => {
 
   return (
     <Wrapper>
-      <TooltipWrapper>
-        <ToggleButtonWrapper onClick={toggleClockFormat}>
-          <Tooltip preferredPosition="top" content="Toggle Date Format">
-            <ReplaceIcon customColor="white" />
-          </Tooltip>
-        </ToggleButtonWrapper>
-      </TooltipWrapper>
+      <ToggleButtonWrapper onClick={toggleClockFormat}>
+        <Tooltip preferredPosition="top" content="Toggle Date Format">
+          <ReplaceIcon customColor="white" />
+        </Tooltip>
+      </ToggleButtonWrapper>
 
       <Time>
         {currentDate.toLocaleString(

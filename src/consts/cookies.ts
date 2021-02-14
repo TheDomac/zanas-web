@@ -1,5 +1,5 @@
 export const cookiesTypes = {
   SHOW_COOKIES_NOTIFICATION: "showCookiesNotification",
-  SHORTCUTS: "shortcuts",
+  BOOKMARKS: "bookmarks",
   CLOCK_FORMAT: "clockFormat",
 };
