@@ -2,6 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import background from "../../images/background.svg";
 
 const GlobalStyle = createGlobalStyle`
+
 html {
   height: 100%;
 }
@@ -18,6 +19,8 @@ html {
     background-image: linear-gradient(120deg, rgba(245,251,238,1) 0%, rgba(164,219,188,1) 35%, rgba(16,94,159,1) 100%);
     background-image: url(${background});
     background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
   }
   
   code {

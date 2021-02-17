@@ -4,7 +4,7 @@ import Clock from "./components/Clock";
 import Bookmarks from "./components/Bookmarks";
 import Ads from "./components/Ads";
 
-const Home = () => {
+const NewTab = () => {
   return (
     <>
       <Bookmarks />
@@ -14,4 +14,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default NewTab;

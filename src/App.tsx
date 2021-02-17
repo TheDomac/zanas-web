@@ -5,7 +5,8 @@ import styled from "styled-components";
 
 import Alert from "@kiwicom/orbit-components/lib/Alert";
 
-import Home from "./scenes/home";
+import NewTab from "./scenes/NewTab";
+import Home from "./scenes/Home";
 
 import { routes } from "./consts/routes";
 import { cookiesTypes } from "./consts/cookies";
@@ -34,12 +35,9 @@ const App = () => {
     <>
       <Router>
         <Switch>
-          {/* <Route path={routes.REGISTER}>
-            <Register />
+          <Route path={routes.NEW_TAB}>
+            <NewTab />
           </Route>
-          <Route path={routes.LOGIN}>
-            <Login />
-          </Route> */}
           <Route path={routes.HOME}>
             <Home />
           </Route>

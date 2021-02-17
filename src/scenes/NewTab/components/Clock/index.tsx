@@ -6,7 +6,6 @@ import Tooltip from "@kiwicom/orbit-components/lib/Tooltip";
 
 import { cookiesTypes } from "../../../../consts/cookies";
 import { formats, days, months } from "../../../../consts/clock";
-import { nth } from "../../../../utils/clock";
 
 import {
   Wrapper,
@@ -64,7 +63,6 @@ const Clock = () => {
       </Time>
       <DateWrapper>
         {day}, {month} {date}
-        {nth(date)}
       </DateWrapper>
     </Wrapper>
   );
