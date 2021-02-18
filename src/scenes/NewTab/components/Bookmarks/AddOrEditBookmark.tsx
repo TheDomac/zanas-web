@@ -4,7 +4,7 @@ import cookies from "js-cookie";
 import InputField from "@kiwicom/orbit-components/lib/InputField";
 import Stack from "@kiwicom/orbit-components/lib/Stack";
 
-import { cookiesTypes } from "../../../../consts/cookies";
+import { cookiesTypes } from "consts/cookies";
 import { AddOrEditBookmarkWrapper, Button } from "./index.styled";
 
 const AddOrEditBookmark = ({

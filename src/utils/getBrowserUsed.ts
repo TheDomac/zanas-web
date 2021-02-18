@@ -1,4 +1,4 @@
-import { browsers } from "../consts/browser";
+import { browsers } from "consts/browser";
 
 const getBrowserUsed = () => {
   if (navigator.userAgent.indexOf("Chrome") !== -1) {

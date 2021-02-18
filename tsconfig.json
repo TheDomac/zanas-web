@@ -20,6 +20,14 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+    "baseUrl": "src",
+    "paths": { 
+      "common": ["common/*"],
+      "consts": ["consts/*"],
+      "images": ["images/*"],
+      "scenes": ["scenes/*"],
+      "utils": ["utils/*"],
+    }
   },
   "include": [
     "src"

@@ -3,8 +3,9 @@ import cookies from "js-cookie";
 
 import PlusIcon from "@kiwicom/orbit-components/lib/icons/Plus";
 
-import { useToggle } from "../../../../utils/useToggle";
-import { cookiesTypes } from "../../../../consts/cookies";
+import { useToggle } from "utils/useToggle";
+import translate from "utils/translate";
+import { cookiesTypes } from "consts/cookies";
 
 import { Wrapper, BookmarksWrapper, Button } from "./index.styled";
 
@@ -55,7 +56,7 @@ const Bookmarks = () => {
       {!isAddOrEditBookmarkShown.isOn && bookmarks.length === 0 && (
         <Button onClick={isAddOrEditBookmarkShown.setOn} iconAndText>
           <PlusIcon />
-          Add New Bookmark
+          {translate("add_bookmark")}
         </Button>
       )}
       {isAddOrEditBookmarkShown.isOn && (

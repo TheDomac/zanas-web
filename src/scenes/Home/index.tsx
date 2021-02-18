@@ -15,8 +15,8 @@ import {
   CustomHeadingSubtitle,
 } from "./index.styled";
 
-import getBrowserUsed from "../../utils/getBrowserUsed";
-import { browsers } from "../../consts/browser";
+import getBrowserUsed from "utils/getBrowserUsed";
+import { browsers } from "consts/browser";
 
 const Home = () => {
   const browserUsed = getBrowserUsed();

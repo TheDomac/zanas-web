@@ -10,7 +10,7 @@ import {
   OptionsWrapper,
   BookmarkWrapper,
 } from "./index.styled";
-import { useToggle } from "../../../../utils/useToggle";
+import { useToggle } from "utils/useToggle";
 
 const Bookmark = ({
   bookmark,
