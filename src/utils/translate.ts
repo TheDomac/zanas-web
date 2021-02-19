@@ -8,7 +8,7 @@ if (!language) {
   cookies.set(cookiesTypes.LANGUAGE, DEFAULT_LANGUAGE);
 }
 
-const selectedLanguage = language || DEFAULT_LANGUAGE;
+export const selectedLanguage = language || DEFAULT_LANGUAGE;
 
 const translate = (translationKey: string, options?: object) => {
   if (!options) {
@@ -17,7 +17,7 @@ const translate = (translationKey: string, options?: object) => {
 
   return Object.entries(options).reduce((prev, current) => {
     const [key, value] = current;
-    return prev.replace(`%${key}%`, value);
+    return prev.replaceAll(`%${key}%`, value);
   }, translations[selectedLanguage][translationKey]);
 };
 

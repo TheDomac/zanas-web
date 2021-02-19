@@ -14,3 +14,8 @@ export const translations: { [key: string]: { [key: string]: string } } = {
 const browserLanguage = window.navigator.language;
 
 export const DEFAULT_LANGUAGE = languages[browserLanguage] || languages.ENGLISH;
+
+export const translateKeys = {
+  [languages.ENGLISH]: "language_en",
+  [languages.CROATIAN]: "language_hr",
+};

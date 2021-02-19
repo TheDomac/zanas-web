@@ -27,6 +27,7 @@
       "images": ["images/*"],
       "scenes": ["scenes/*"],
       "utils": ["utils/*"],
+      "services": ["services/*"],
     }
   },
   "include": [

@@ -24,4 +24,9 @@ export default {
   months_november: "November",
   months_december: "December",
   format_month: "%day%, %month% %date%",
+  language: "Language",
+  language_en: "English (US)",
+  language_hr: "Hrvatski",
+  pick_language: "Pick your language",
+  date_and_time: "Date & Time",
 };

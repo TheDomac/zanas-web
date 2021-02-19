@@ -4,11 +4,13 @@ import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import GlobalStyles from "./common/styles/globalStyles";
 
+import ClockProvider from "services/Clock";
+
 const AppWithProviders = () => (
-  <>
+  <ClockProvider>
     <GlobalStyles />
     <App />
-  </>
+  </ClockProvider>
 );
 
 ReactDOM.render(

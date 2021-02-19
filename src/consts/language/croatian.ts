@@ -4,7 +4,7 @@ export default {
     "Pomozi ljudima u potrebi svaki put kad otvoriš novu karticu u svojem pregledniku",
   promo_subtitle: "Brzo, jednostavno i besplatno!",
   add_to_browser: "Dodaj u %browserUsed%",
-  change_date_format: "Promijeni format datuma",
+  change_date_format: "Promijenite format datuma",
   days_monday: "ponedjeljak",
   days_tuesday: "utorak",
   days_wednesday: "srijeda",
@@ -25,4 +25,9 @@ export default {
   months_november: "studenog",
   months_december: "prosinca",
   format_month: "%day%, %date%. %month%",
+  language: "Jezik",
+  language_en: "English (US)",
+  language_hr: "Hrvatski",
+  pick_language: "Odaberite svoj jezik",
+  date_and_time: "Datum i vrijeme",
 };
