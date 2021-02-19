@@ -9,6 +9,8 @@ import Text from "@kiwicom/orbit-components/lib/Text";
 import ButtonGroup from "@kiwicom/orbit-components/lib/ButtonGroup";
 import ChevronDownIcon from "@kiwicom/orbit-components/lib/icons/ChevronDown";
 
+import translate from "utils/translate";
+
 import {
   HomeWrapper,
   CustomHeading,
@@ -23,17 +25,15 @@ const Home = () => {
   return (
     <HomeWrapper>
       <Stack direction="column" align="center">
-        <CustomHeading>
-          Raise money for charity by opening a new browser tab
-        </CustomHeading>
+        <CustomHeading>{translate("promo_title")}</CustomHeading>
         <CustomHeadingSubtitle>
-          It's free, easy and only takes a few seconds to set up.
+          {translate("promo_subtitle")}
         </CustomHeadingSubtitle>
         {browserUsed && (
           <ButtonGroup>
             <Button type="primary">
               <Text uppercase type="white" weight="bold">
-                Add to {browserUsed}
+                {translate("add_to_browser", { browserUsed })}
               </Text>
             </Button>
             <Popover
@@ -41,13 +41,25 @@ const Home = () => {
               content={
                 <>
                   {browserUsed !== browsers.CHROME && (
-                    <ListChoice title="Add to Chrome" />
+                    <ListChoice
+                      title={translate("add_to_browser", {
+                        browserUsed: browsers.CHROME,
+                      })}
+                    />
                   )}
                   {browserUsed !== browsers.FIREFOX && (
-                    <ListChoice title="Add to Firefox" />
+                    <ListChoice
+                      title={translate("add_to_browser", {
+                        browserUsed: browsers.FIREFOX,
+                      })}
+                    />
                   )}
                   {browserUsed !== browsers.EDGE && (
-                    <ListChoice title="Add to Edge" />
+                    <ListChoice
+                      title={translate("add_to_browser", {
+                        browserUsed: browsers.EDGE,
+                      })}
+                    />
                   )}
                 </>
               }

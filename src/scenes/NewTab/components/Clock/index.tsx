@@ -6,6 +6,7 @@ import Tooltip from "@kiwicom/orbit-components/lib/Tooltip";
 
 import { cookiesTypes } from "consts/cookies";
 import { formats, days, months } from "consts/clock";
+import translate from "utils/translate";
 
 import {
   Wrapper,
@@ -39,14 +40,17 @@ const Clock = () => {
     });
   };
 
-  const day = days[currentDate.getDay()];
-  const month = months[currentDate.getMonth()];
+  const day = translate(days[currentDate.getDay()]);
+  const month = translate(months[currentDate.getMonth()]);
   const date = currentDate.getDate();
 
   return (
     <Wrapper>
       <ToggleButtonWrapper onClick={toggleClockFormat}>
-        <Tooltip preferredPosition="top" content="Toggle Date Format">
+        <Tooltip
+          preferredPosition="top"
+          content={translate("change_date_format")}
+        >
           <ReplaceIcon customColor="white" />
         </Tooltip>
       </ToggleButtonWrapper>
@@ -62,7 +66,7 @@ const Clock = () => {
         )}
       </Time>
       <DateWrapper>
-        {day}, {month} {date}
+        {translate("format_month", { day, month, date })}
       </DateWrapper>
     </Wrapper>
   );

@@ -1,9 +1,24 @@
 import cookies from "js-cookie";
 
 import { cookiesTypes } from "consts/cookies";
-import { languages, translations } from "consts/language";
+import { translations, DEFAULT_LANGUAGE } from "consts/language";
 
-const language = cookies.get(cookiesTypes.LANGUAGE) || languages.ENGLISH;
-const translate = (key: string) => translations[language][key];
+const language = cookies.get(cookiesTypes.LANGUAGE);
+if (!language) {
+  cookies.set(cookiesTypes.LANGUAGE, DEFAULT_LANGUAGE);
+}
+
+const selectedLanguage = language || DEFAULT_LANGUAGE;
+
+const translate = (translationKey: string, options?: object) => {
+  if (!options) {
+    return translations[selectedLanguage][translationKey];
+  }
+
+  return Object.entries(options).reduce((prev, current) => {
+    const [key, value] = current;
+    return prev.replace(`%${key}%`, value);
+  }, translations[selectedLanguage][translationKey]);
+};
 
 export default translate;
