@@ -1,6 +1,6 @@
 export default {
   add_bookmark: "Add new bookmark",
-  promo_title: "Help people in need every time you open a new browser tab",
+  promo_title: "Help people in need around you, one browser tab at a time.",
   promo_subtitle: "It's free, easy and only takes a few seconds to set up.",
   add_to_browser: "Add to %browserUsed%",
   change_date_format: "Change date format",
@@ -29,4 +29,7 @@ export default {
   language_hr: "Hrvatski",
   pick_language: "Pick your language",
   date_and_time: "Date & Time",
+  laptop_title: "New and improved start screen",
+  laptop_subtitle_1: "Check",
+  laptop_subtitle_2: " it out, see if you like it.",
 };

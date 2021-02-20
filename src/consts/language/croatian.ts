@@ -1,7 +1,7 @@
 export default {
   add_bookmark: "Dodaj novu poveznicu",
   promo_title:
-    "Pomozi ljudima u potrebi svaki put kad otvoriš novu karticu u svojem pregledniku",
+    "Pomozi ljudima oko sebe koji trebaju pomoć dok surfaš internetom.",
   promo_subtitle: "Brzo, jednostavno i besplatno!",
   add_to_browser: "Dodaj u %browserUsed%",
   change_date_format: "Promijenite format datuma",
@@ -30,4 +30,7 @@ export default {
   language_hr: "Hrvatski",
   pick_language: "Odaberite svoj jezik",
   date_and_time: "Datum i vrijeme",
+  laptop_title: "Novi i bolji početni ekran",
+  laptop_subtitle_1: "Provjeri",
+  laptop_subtitle_2: " ga, sigurno će ti se svidjeti.",
 };
