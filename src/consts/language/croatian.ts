@@ -33,4 +33,7 @@ export default {
   laptop_title: "Novi i bolji početni ekran",
   laptop_subtitle_1: "Provjeri",
   laptop_subtitle_2: " ga, sigurno će ti se svidjeti.",
+  donating_title: "Zarada ide unesrećenima",
+  donating_subtitle:
+    "Novac koji se prikupi od reklama na novom početnom ekranu i od dodatnih donacija šalje se ljudima u teškim situacijama.",
 };
