@@ -5,12 +5,15 @@ import App from "./App";
 import GlobalStyles from "./common/styles/globalStyles";
 
 import ClockProvider from "services/Clock";
+import DonationsInfoProvider from "services/DonationsInfo";
 
 const AppWithProviders = () => (
-  <ClockProvider>
-    <GlobalStyles />
-    <App />
-  </ClockProvider>
+  <DonationsInfoProvider>
+    <ClockProvider>
+      <GlobalStyles />
+      <App />
+    </ClockProvider>
+  </DonationsInfoProvider>
 );
 
 ReactDOM.render(

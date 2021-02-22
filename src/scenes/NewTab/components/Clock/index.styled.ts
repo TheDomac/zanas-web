@@ -7,6 +7,9 @@ export const Wrapper = styled.div`
   transform: translate(-50%, -50%);
   text-align: center;
   text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
 `;
 
 export const Time = styled.div`

@@ -35,4 +35,7 @@ export default {
   donating_title: "Profits go to the unfortunate",
   donating_subtitle:
     "Money raised from ads on the new tab page and from additional donations gets sent to people in tough situations.",
+  loading_donation_info_error: "Error while loading info",
+  loading_donation_info_this_month: "This month",
+  loading_donation_info_total: "Total donated",
 };

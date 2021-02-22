@@ -3,6 +3,7 @@ import React, { useState, useContext } from "react";
 import Popover from "@kiwicom/orbit-components/lib/Popover";
 import ListChoice from "@kiwicom/orbit-components/lib/ListChoice";
 import MenuKebabIcon from "@kiwicom/orbit-components/lib/icons/MenuKebab";
+import Separator from "@kiwicom/orbit-components/lib/Separator";
 
 import translate, { selectedLanguage } from "utils/translate";
 import { translateKeys } from "consts/language";
@@ -11,6 +12,7 @@ import { ClockContext } from "services/Clock";
 import { Wrapper, MenuIcon, MenuWrapper } from "./index.styled";
 import LanguageMenu from "./LanguageMenu";
 import DateTimeMenu from "./DateTimeMenu";
+import DonationsInfo from "./DonationsInfo";
 
 const menuItems = {
   NONE: null,
@@ -20,7 +22,6 @@ const menuItems = {
 
 const Menu = () => {
   const { day, month, date, hoursMinutes } = useContext(ClockContext);
-
   const [selectedMenuItem, setSelectedMenuItem] = useState<string | null>(
     menuItems.NONE
   );
@@ -34,8 +35,10 @@ const Menu = () => {
         onClose={() => setSelectedMenuItem(menuItems.NONE)}
         content={
           <MenuWrapper>
-            {!selectedMenuItem && (
+            {selectedMenuItem === menuItems.NONE && (
               <>
+                <DonationsInfo />
+                <Separator spaceAfter="none" />
                 <ListChoice
                   title={translate("language")}
                   description={translate(translateKeys[selectedLanguage])}

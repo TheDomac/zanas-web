@@ -36,4 +36,7 @@ export default {
   donating_title: "Zarada ide unesrećenima",
   donating_subtitle:
     "Novac koji se prikupi od reklama na novom početnom ekranu i od dodatnih donacija šalje se ljudima u teškim situacijama.",
+  loading_donation_info_error: "Greška pri učitavanju informacija",
+  loading_donation_info_this_month: "Prikupljeno ovaj mjesec",
+  loading_donation_info_total: "Ukupno donirano",
 };
