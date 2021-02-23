@@ -12,19 +12,31 @@ export const GreyWrapper = styled.div`
   padding: 60px 40px;
 `;
 
+interface HeadingsProps {
+  fontSize?: string;
+  centered?: boolean;
+}
 export const CustomHeading = styled.h1`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 40px;
   max-width: 600px;
-  text-align: center;
-  color: rgba(33, 33, 33, 0.82);
+  color: #4a4a4a;
+
+  ${(props: HeadingsProps) =>
+    props.fontSize ? `font-size: ${props.fontSize}px` : "40px"}
+
+  ${(props: HeadingsProps) => (props.centered ? `text-align: center;` : "")}
 `;
 export const CustomHeadingSubtitle = styled.h2`
   font-size: 22px;
   font-weight: 400;
-  color: rgba(33, 33, 33, 0.82);
+  color: #4a4a4a;
   margin-bottom: 10px;
+  ${(props: HeadingsProps) =>
+    props.fontSize ? `font-size: ${props.fontSize}px` : "40px"}
+
+  ${(props: HeadingsProps) => (props.centered ? `text-align: center;` : "")}
 `;
 
 export const Logo = styled.img`

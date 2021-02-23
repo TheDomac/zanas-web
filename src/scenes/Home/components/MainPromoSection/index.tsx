@@ -25,11 +25,11 @@ import {
 const MainPromoSection = () => {
   const browserUsed = getBrowserUsed();
   return (
-    <WhiteWrapper paddingTop="120">
+    <WhiteWrapper paddingTop="140">
       <Stack direction="column" align="center" spacing="large">
         <Logo src={largeLogo} alt="logo" />
-        <CustomHeading>{translate("promo_title")}</CustomHeading>
-        <CustomHeadingSubtitle>
+        <CustomHeading centered>{translate("promo_title")}</CustomHeading>
+        <CustomHeadingSubtitle centered>
           {translate("promo_subtitle")}
         </CustomHeadingSubtitle>
         {browserUsed && (

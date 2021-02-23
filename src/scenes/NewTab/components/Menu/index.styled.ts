@@ -27,3 +27,8 @@ export const DonationsInfoWrapper = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const CustomHeading = styled.h1`
+  font-size: 34px;
+  color: #4a4a4a;
+`;

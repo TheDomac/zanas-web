@@ -1,19 +1,21 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 
 import Loading from "@kiwicom/orbit-components/lib/Loading";
-import Text from "@kiwicom/orbit-components/lib/Text";
 import Tooltip from "@kiwicom/orbit-components/lib/Tooltip";
+import Text from "@kiwicom/orbit-components/lib/Text";
 import Stack from "@kiwicom/orbit-components/lib/Stack";
 
 import { DonationsInfoContext } from "services/DonationsInfo";
 import translate from "utils/translate";
 import getAmount from "utils/getAmount";
 
-import { DonationsInfoWrapper, CustomHeading } from "./index.styled";
+import { SoFarDonatedWrapper } from "./index.styled";
 
-const Menu = () => {
+import { CustomHeading } from "../../index.styled";
+
+const SoFarDonated = () => {
   const {
-    state: { donationsInfoData, donationsInfoError, donationsInfoLoading },
+    state: { donationsInfoData, donationsInfoLoading },
     loadDonationsInfo,
   } = useContext(DonationsInfoContext);
 
@@ -25,11 +27,8 @@ const Menu = () => {
   }, []);
 
   return (
-    <DonationsInfoWrapper>
+    <SoFarDonatedWrapper>
       {donationsInfoLoading && <Loading type="inlineLoader" />}
-      {donationsInfoError && (
-        <Text type="critical">{translate("loading_donation_info_error")}</Text>
-      )}
       {donationsInfoData && (
         <Tooltip
           content={
@@ -47,18 +46,18 @@ const Menu = () => {
             </>
           }
         >
-          <Stack direction="column" spacing="XXXSmall" align="center">
+          <Stack direction="column" spacing="XXXSmall">
+            <CustomHeading fontSize="34">
+              {getAmount(donationsInfoData?.donatedTotal)}
+            </CustomHeading>
             <Text type="secondary" size="small">
               {translate("loading_donation_info_total")}
             </Text>
-            <CustomHeading>
-              {getAmount(donationsInfoData?.donatedTotal)}
-            </CustomHeading>
           </Stack>
         </Tooltip>
       )}
-    </DonationsInfoWrapper>
+    </SoFarDonatedWrapper>
   );
 };
 
-export default Menu;
+export default SoFarDonated;
