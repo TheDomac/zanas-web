@@ -30,6 +30,7 @@ const Bookmarks = () => {
     setBookmarks(newBookmarks);
     cookies.set(cookiesTypes.BOOKMARKS, JSON.stringify(newBookmarks), {
       expires: 365 * 10,
+      sameSite: "lax",
     });
   };
 

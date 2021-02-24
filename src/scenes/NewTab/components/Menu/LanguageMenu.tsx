@@ -16,7 +16,10 @@ import { cookiesTypes } from "consts/cookies";
 
 const LanguageMenu = ({ setSelectedMenuItem, menuItems }: any) => {
   const handleLanguageChange = (language: string) => {
-    cookies.set(cookiesTypes.LANGUAGE, language);
+    cookies.set(cookiesTypes.LANGUAGE, language, {
+      expires: 365,
+      sameSite: "lax",
+    });
     // eslint-disable-next-line no-restricted-globals
     location.reload();
   };

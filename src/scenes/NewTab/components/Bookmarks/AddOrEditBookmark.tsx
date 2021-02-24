@@ -41,6 +41,7 @@ const AddOrEditBookmark = ({
     setBookmarks(newBookmarks);
     cookies.set(cookiesTypes.BOOKMARKS, JSON.stringify(newBookmarks), {
       expires: 365 * 10,
+      sameSite: "lax",
     });
     isAddOrEditBookmarkShown.setOff();
   };
@@ -59,6 +60,7 @@ const AddOrEditBookmark = ({
     setBookmarks(newBookmarks);
     cookies.set(cookiesTypes.BOOKMARKS, JSON.stringify(newBookmarks), {
       expires: 365 * 10,
+      sameSite: "lax",
     });
     setEditingBookmarkId(null);
     isAddOrEditBookmarkShown.setOff();

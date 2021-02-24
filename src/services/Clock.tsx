@@ -25,6 +25,7 @@ const ClockProvider = ({ children }: any) => {
     setHoursMinutesFormat(newFormat);
     cookies.set(cookiesTypes.CLOCK_FORMAT, newFormat, {
       expires: 365,
+      sameSite: "lax",
     });
   };
 

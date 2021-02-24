@@ -28,6 +28,7 @@ const App = () => {
     cookiesNotification.setOff();
     cookies.set(cookiesTypes.SHOW_COOKIES_NOTIFICATION, String(true), {
       expires: 365,
+      sameSite: "lax",
     });
   };
 

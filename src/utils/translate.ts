@@ -5,7 +5,10 @@ import { translations, DEFAULT_LANGUAGE } from "consts/language";
 
 const language = cookies.get(cookiesTypes.LANGUAGE);
 if (!language) {
-  cookies.set(cookiesTypes.LANGUAGE, DEFAULT_LANGUAGE);
+  cookies.set(cookiesTypes.LANGUAGE, DEFAULT_LANGUAGE, {
+    expires: 365,
+    sameSite: "lax",
+  });
 }
 
 export const selectedLanguage = language || DEFAULT_LANGUAGE;
