@@ -15,25 +15,33 @@ export const GreyWrapper = styled.div`
 interface HeadingsProps {
   fontSize?: string;
   centered?: boolean;
+  inverted?: boolean;
+  maxWidth?: string;
 }
 export const CustomHeading = styled.h1`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 40px;
-  max-width: 600px;
-  color: #4a4a4a;
-
-  ${(props: HeadingsProps) =>
-    props.fontSize ? `font-size: ${props.fontSize}px` : "40px;"}
-
-  ${(props: HeadingsProps) => (props.centered ? `text-align: center;` : "")}
+  max-width: ${(props: HeadingsProps) =>
+    props.inverted ? `${props.maxWidth}px;` : "600px;"}
+  color: ${(props: HeadingsProps) =>
+    props.inverted
+      ? `white; text-shadow: 0 0 10px black; a { text-shadow: none; }`
+      : "#4a4a4a;"}
+    ${(props: HeadingsProps) =>
+      props.fontSize ? `font-size: ${props.fontSize}px` : "40px;"}
+    ${(props: HeadingsProps) => (props.centered ? `text-align: center;` : "")};
 `;
 export const CustomHeadingSubtitle = styled.h2`
   font-size: 22px;
   font-weight: 400;
-  color: #4a4a4a;
+  color: ${(props: HeadingsProps) =>
+    props.inverted
+      ? `white; text-shadow: 0 0 10px black; a { text-shadow: none; }`
+      : "#4a4a4a;"}
   margin-bottom: 10px;
-  max-width: 600px;
+  max-width: ${(props: HeadingsProps) =>
+    props.inverted ? `${props.maxWidth}px;` : "600px;"}
   ${(props: HeadingsProps) =>
     props.fontSize ? `font-size: ${props.fontSize}px;` : "40px;"}
 

@@ -1,7 +1,6 @@
 export default {
   add_bookmark: "Dodaj novu poveznicu",
-  promo_title:
-    "Pomozi ljudima oko sebe koji trebaju pomoć dok surfaš internetom.",
+  promo_title: "Pomozi ljudima koji trebaju pomoć dok surfaš internetom.",
   promo_subtitle: "Brzo, jednostavno i besplatno!",
   add_to_browser: "Dodaj u %browserUsed%",
   change_date_format: "Promijenite format datuma",
@@ -31,8 +30,8 @@ export default {
   pick_language: "Odaberite svoj jezik",
   date_and_time: "Datum i vrijeme",
   laptop_title: "Novi i bolji početni ekran",
-  laptop_subtitle_1: "Provjeri",
-  laptop_subtitle_2: " ga, sigurno će ti se svidjeti.",
+  laptop_subtitle_1: "Isprobaj ga",
+  laptop_subtitle_2: " , sigurno će ti se svidjeti.",
   donating_title: "Zarada ide unesrećenima",
   donating_subtitle:
     "Novac koji se prikupi od reklama na novom početnom ekranu i od dodatnih donacija šalje se ljudima u teškim situacijama.",
@@ -44,15 +43,14 @@ export default {
   chrome: "Chrome",
   firefox: "Firefox",
   edge: "Edge",
-  details_section_title: "Sve o Zanas-u",
+  details_section_title: "O Zanas-u",
   details_section_subtitle_1: "Ako želiš, možeš vidjeti ",
   details_section_subtitle_1_2: "naš kod",
   details_section_subtitle_1_3: " i pratiti naš rad na ",
   details_section_subtitle_1_4: "društvenim mrežama",
   details_section_subtitle_2:
-    "Zanas je trenutno u ranoj verziji (MVP) i naš cilj je da omogućimo BILO KOME da prikuplja novac na ovaj način za BILO KOGA kome je potrebno. Trenutno se fokusiramo na pomoć žrtvama potresa u Petrinji i Sisku.",
+    "Zanas je trenutno u ranoj fazi (MVP) i naš cilj je da omogućimo BILO KOME da prikuplja novac na ovaj način za BILO KOGA kome je potrebno. Trenutno se fokusiramo na pomoć žrtvama potresa u Petrinji i Sisku.",
   details_section_subtitle_3:
     "Nadamo se da ti se sviđa ideja Zanas-a. Možeš nam pokazati svoju podršku tako da koristiš našu ekstenziju i pratiš naš rad.",
-  details_section_subtitle_4:
-    "Možeš nas kontaktirat bilo kad na info@zanas.net",
+  details_section_subtitle_4: "Kontaktiraj nas bilo kad na info@zanas.net",
 };

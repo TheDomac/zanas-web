@@ -30,8 +30,8 @@ export default {
   pick_language: "Pick your language",
   date_and_time: "Date & Time",
   laptop_title: "New and improved start screen",
-  laptop_subtitle_1: "Check",
-  laptop_subtitle_2: " it out, see if you like it.",
+  laptop_subtitle_1: "Check it out",
+  laptop_subtitle_2: ", see if you like it.",
   donating_title: "Profits go to the unfortunate",
   donating_subtitle:
     "Money raised from ads on the new tab page and from additional donations gets sent to people in tough situations.",
@@ -52,5 +52,5 @@ export default {
     "Zanas is currently in its early (MVP) version and our goal is enabling ANYONE to raise money in this way FOR anyone in need. Right now we are focusing on helping the victims of an earhquake in Petrinja and Sisak (Croatia).",
   details_section_subtitle_3:
     "We hope you like the idea behind Zanas. You can show us your support by using the extension and following our work.",
-  details_section_subtitle_4: "You can contact us anytime at info@zanas.net",
+  details_section_subtitle_4: "Contact us anytime at info@zanas.net",
 };

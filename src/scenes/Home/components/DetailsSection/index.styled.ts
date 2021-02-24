@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  padding: 60px 40px;
+`;
+
 export const PopoverContainer = styled.div`
   width: 70px;
   display: flex;

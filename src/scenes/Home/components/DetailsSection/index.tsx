@@ -11,21 +11,17 @@ import translate from "utils/translate";
 
 import DownloadButtonGroup from "../DownloadButtonGroup";
 
-import {
-  WhiteWrapper,
-  CustomHeading,
-  CustomHeadingSubtitle,
-} from "../../index.styled";
+import { CustomHeading, CustomHeadingSubtitle } from "../../index.styled";
 
-import { PopoverContainer, Icon } from "./index.styled";
+import { PopoverContainer, Icon, Wrapper } from "./index.styled";
 const DetailsSection = () => {
   return (
-    <WhiteWrapper>
+    <Wrapper>
       <Stack direction="column" align="center" spacing="large">
-        <CustomHeading centered>
+        <CustomHeading centered inverted maxWidth="820">
           {translate("details_section_title")}
         </CustomHeading>
-        <CustomHeadingSubtitle centered>
+        <CustomHeadingSubtitle centered inverted maxWidth="820">
           {translate("details_section_subtitle_1")}
           <TextLink external href="https://github.com/TheDomac/zanas-web">
             {translate("details_section_subtitle_1_2")}
@@ -45,18 +41,18 @@ const DetailsSection = () => {
           </TextLink>
           {"."}
         </CustomHeadingSubtitle>
-        <CustomHeadingSubtitle centered>
+        <CustomHeadingSubtitle centered inverted maxWidth="820">
           {translate("details_section_subtitle_2")}
         </CustomHeadingSubtitle>
-        <CustomHeadingSubtitle centered>
+        <CustomHeadingSubtitle centered inverted maxWidth="820">
           {translate("details_section_subtitle_3")}
         </CustomHeadingSubtitle>
-        <CustomHeadingSubtitle centered>
+        <CustomHeadingSubtitle centered inverted maxWidth="820">
           {translate("details_section_subtitle_4")}
         </CustomHeadingSubtitle>
         <DownloadButtonGroup />
       </Stack>
-    </WhiteWrapper>
+    </Wrapper>
   );
 };
 
