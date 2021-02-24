@@ -39,4 +39,18 @@ export default {
   loading_donation_info_this_month: "So far raised this month: %amount%",
   loading_donation_info_total: "Total raised",
   last_updated: "Last updated: %lastUpdated%",
+  available_on: "Available on:",
+  chrome: "Chrome",
+  firefox: "Firefox",
+  edge: "Edge",
+  details_section_title: "Everything you might want to know about Zanas",
+  details_section_subtitle_1: "You can check out ",
+  details_section_subtitle_1_2: "our entire codebase",
+  details_section_subtitle_1_3: " and we encourage you to follow our work on ",
+  details_section_subtitle_1_4: "social media",
+  details_section_subtitle_2:
+    "Zanas is currently in its early (MVP) version and our goal is enabling ANYONE to raise money in this way FOR anyone in need. Right now we are focusing on helping the victims of an earhquake in Petrinja and Sisak (Croatia).",
+  details_section_subtitle_3:
+    "We hope you like the idea behind Zanas. You can show us your support by using the extension and following our work.",
+  details_section_subtitle_4: "You can contact us anytime at info@zanas.net",
 };

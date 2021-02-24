@@ -18,7 +18,13 @@ import {
 const CheckItOutSection = () => {
   return (
     <GreyWrapper>
-      <Stack direction="row" justify="center" align="center" spacing="XXLarge">
+      <Stack
+        direction="column"
+        desktop={{ direction: "row" }}
+        justify="center"
+        align="center"
+        spacing="XXLarge"
+      >
         <Logo src={laptopImg} alt="laptop_img" />
         <WidthWrapper width="600">
           <Stack direction="column" inline>

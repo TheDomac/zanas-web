@@ -40,4 +40,19 @@ export default {
   loading_donation_info_this_month: "Prikupljeno ovaj mjesec: %amount%",
   loading_donation_info_total: "Ukupno donirano",
   last_updated: "Posljednje ažurirano: %lastUpdated%",
+  available_on: "Dostupno na:",
+  chrome: "Chrome",
+  firefox: "Firefox",
+  edge: "Edge",
+  details_section_title: "Sve o Zanas-u",
+  details_section_subtitle_1: "Ako želiš, možeš vidjeti ",
+  details_section_subtitle_1_2: "naš kod",
+  details_section_subtitle_1_3: " i pratiti naš rad na ",
+  details_section_subtitle_1_4: "društvenim mrežama",
+  details_section_subtitle_2:
+    "Zanas je trenutno u ranoj verziji (MVP) i naš cilj je da omogućimo BILO KOME da prikuplja novac na ovaj način za BILO KOGA kome je potrebno. Trenutno se fokusiramo na pomoć žrtvama potresa u Petrinji i Sisku.",
+  details_section_subtitle_3:
+    "Nadamo se da ti se sviđa ideja Zanas-a. Možeš nam pokazati svoju podršku tako da koristiš našu ekstenziju i pratiš naš rad.",
+  details_section_subtitle_4:
+    "Možeš nas kontaktirat bilo kad na info@zanas.net",
 };

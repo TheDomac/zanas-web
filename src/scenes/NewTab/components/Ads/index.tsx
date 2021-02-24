@@ -1,16 +1,16 @@
-import React, { useRef } from "react";
+import React from "react";
 
 import Alert from "@kiwicom/orbit-components/lib/Alert";
 
 import { AdsWrapper, AdblockNotice, AdBlockDetector } from "./index.styled";
 
 const Ads = () => {
-  const adblockDetector = useRef<HTMLDivElement>(null);
+  // const adblockDetector = useRef<HTMLDivElement>(null);
 
-  const isUsingAdBlock = adblockDetector.current?.offsetHeight === 0;
+  // const isUsingAdBlock = adblockDetector.current?.offsetHeight === 0;
   return (
     <AdsWrapper>
-      <AdBlockDetector className="adBanner" ref={adblockDetector} />
+      {/* <AdBlockDetector className="ads" ref={adblockDetector} />
       {isUsingAdBlock && (
         <AdblockNotice>
           <Alert type="warning">
@@ -19,7 +19,7 @@ const Ads = () => {
             <p>https://lse-extension.net</p>
           </Alert>
         </AdblockNotice>
-      )}
+      )} */}
       {/* {this.state.areAdsShown &&
         this.state.adsScriptLoadStatus === "success" && <Ad1 />} */}
     </AdsWrapper>

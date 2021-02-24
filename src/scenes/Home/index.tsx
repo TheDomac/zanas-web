@@ -5,6 +5,7 @@ import MainPromoSection from "./components/MainPromoSection";
 import CheckItOutSection from "./components/CheckItOutSection";
 import DonatingSection from "./components/DonatingSection";
 import SoFarDonated from "./components/SoFarDonated";
+import DetailsSection from "./components/DetailsSection";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <MainPromoSection />
       <CheckItOutSection />
       <DonatingSection />
+      <DetailsSection />
     </>
   );
 };

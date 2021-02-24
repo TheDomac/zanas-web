@@ -24,7 +24,7 @@ export const CustomHeading = styled.h1`
   color: #4a4a4a;
 
   ${(props: HeadingsProps) =>
-    props.fontSize ? `font-size: ${props.fontSize}px` : "40px"}
+    props.fontSize ? `font-size: ${props.fontSize}px` : "40px;"}
 
   ${(props: HeadingsProps) => (props.centered ? `text-align: center;` : "")}
 `;
@@ -33,8 +33,9 @@ export const CustomHeadingSubtitle = styled.h2`
   font-weight: 400;
   color: #4a4a4a;
   margin-bottom: 10px;
+  max-width: 600px;
   ${(props: HeadingsProps) =>
-    props.fontSize ? `font-size: ${props.fontSize}px` : "40px"}
+    props.fontSize ? `font-size: ${props.fontSize}px;` : "40px;"}
 
   ${(props: HeadingsProps) => (props.centered ? `text-align: center;` : "")}
 `;
@@ -45,5 +46,5 @@ export const Logo = styled.img`
 `;
 
 export const WidthWrapper = styled.div`
-  width: ${(props: { width: string }) => props.width}px;
+  max-width: ${(props: { width: string }) => props.width}px;
 `;

@@ -16,7 +16,13 @@ import {
 const DonatingSection = () => {
   return (
     <WhiteWrapper>
-      <Stack direction="row" justify="center" align="center" spacing="XXLarge">
+      <Stack
+        direction="column-reverse"
+        desktop={{ direction: "row" }}
+        justify="center"
+        align="center"
+        spacing="XXLarge"
+      >
         <WidthWrapper width="600">
           <Stack direction="column" inline>
             <CustomHeading>{translate("donating_title")}</CustomHeading>
