@@ -37,7 +37,7 @@ export const CustomHeadingSubtitle = styled.h2`
   font-weight: 400;
   color: ${(props: HeadingsProps) =>
     props.inverted
-      ? `white; text-shadow: 0 0 10px black; a { text-shadow: none; }`
+      ? `white; text-shadow: 0 0 10px black; a { text-shadow: 0 0 7px #007F6D; }`
       : "#4a4a4a;"}
   margin-bottom: 10px;
   max-width: ${(props: HeadingsProps) =>
