@@ -2,7 +2,6 @@ import React from "react";
 import cookies from "js-cookie";
 
 import ListChoice from "@kiwicom/orbit-components/lib/ListChoice";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
 import Text from "@kiwicom/orbit-components/lib/Text";
 import Button from "@kiwicom/orbit-components/lib/Button";
 import Separator from "@kiwicom/orbit-components/lib/Separator";
@@ -13,6 +12,8 @@ import CheckCircleIcon from "@kiwicom/orbit-components/lib/icons/CheckCircle";
 import translate, { selectedLanguage } from "utils/translate";
 import { languages, translateKeys } from "consts/language";
 import { cookiesTypes } from "consts/cookies";
+
+import { MenuItemTitleWrapper } from "./index.styled";
 
 const LanguageMenu = ({ setSelectedMenuItem, menuItems }: any) => {
   const handleLanguageChange = (language: string) => {
@@ -26,14 +27,7 @@ const LanguageMenu = ({ setSelectedMenuItem, menuItems }: any) => {
 
   return (
     <>
-      <Separator spaceAfter="small" />
-      <Stack
-        direction="row"
-        spacing="small"
-        align="center"
-        justify="center"
-        spaceAfter="small"
-      >
+      <MenuItemTitleWrapper>
         <Button
           circled
           size="small"
@@ -42,8 +36,8 @@ const LanguageMenu = ({ setSelectedMenuItem, menuItems }: any) => {
           onClick={() => setSelectedMenuItem(menuItems.NONE)}
         />
         <Text>{translate("pick_language")}</Text>
-      </Stack>
-      <Separator />
+      </MenuItemTitleWrapper>
+      <Separator spaceAfter="none" />
       <ListChoice
         title={translate(translateKeys[languages.ENGLISH])}
         onClick={() => handleLanguageChange(languages.ENGLISH)}

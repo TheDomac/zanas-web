@@ -32,3 +32,14 @@ export const CustomHeading = styled.h1`
   font-size: 34px;
   color: #4a4a4a;
 `;
+
+export const MenuItemTitleWrapper = styled.div`
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & button {
+    margin-right: 8px;
+  }
+`;

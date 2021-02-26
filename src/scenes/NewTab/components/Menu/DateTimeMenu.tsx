@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 
 import ListChoice from "@kiwicom/orbit-components/lib/ListChoice";
-import Stack from "@kiwicom/orbit-components/lib/Stack";
 import Text from "@kiwicom/orbit-components/lib/Text";
 import Button from "@kiwicom/orbit-components/lib/Button";
 import Separator from "@kiwicom/orbit-components/lib/Separator";
@@ -13,6 +12,8 @@ import translate from "utils/translate";
 import { ClockContext } from "services/Clock";
 import { formats } from "consts/clock";
 
+import { MenuItemTitleWrapper } from "./index.styled";
+
 const DateTimeMenu = ({ setSelectedMenuItem, menuItems }: any) => {
   const { currentDate, hoursMinutesFormat, changeClockFormat } = useContext(
     ClockContext
@@ -20,14 +21,7 @@ const DateTimeMenu = ({ setSelectedMenuItem, menuItems }: any) => {
 
   return (
     <>
-      <Separator spaceAfter="small" />
-      <Stack
-        direction="row"
-        spacing="small"
-        align="center"
-        justify="center"
-        spaceAfter="small"
-      >
+      <MenuItemTitleWrapper>
         <Button
           circled
           size="small"
@@ -36,8 +30,8 @@ const DateTimeMenu = ({ setSelectedMenuItem, menuItems }: any) => {
           onClick={() => setSelectedMenuItem(menuItems.NONE)}
         />
         <Text>{translate("change_date_format")}</Text>
-      </Stack>
-      <Separator />
+      </MenuItemTitleWrapper>
+      <Separator spaceAfter="none" />
       <ListChoice
         title={currentDate.toLocaleString("en-US", {
           hour: "numeric",
