@@ -7,6 +7,8 @@ import Stack from "@kiwicom/orbit-components/lib/Stack";
 import { cookiesTypes } from "consts/cookies";
 import { AddOrEditBookmarkWrapper, Button } from "./index.styled";
 
+import translate from "utils/translate";
+
 const AddOrEditBookmark = ({
   isAddOrEditBookmarkShown,
   editingBookmarkId,
@@ -22,7 +24,7 @@ const AddOrEditBookmark = ({
   );
 
   useEffect(() => {
-    setBookmarkName(editingBookmark?.name || "New Bookmark");
+    setBookmarkName(editingBookmark?.name || translate("new_bookmark"));
     setBookmarkUrl(editingBookmark?.url || "");
   }, [editingBookmark]);
 
@@ -85,17 +87,17 @@ const AddOrEditBookmark = ({
         />
         <InputField
           value={bookmarkUrl}
-          placeholder="https://www.example.com/"
+          placeholder={translate("bookmark_placeholder")}
           onChange={changeUrl}
           spaceAfter="small"
         />
 
         <Stack direction="row" justify="end" spacing="small">
           <Button type="button" onClick={handleCancel}>
-            Cancel
+            {translate("cancel")}
           </Button>
           <Button type="submit" disabled={!bookmarkName || !bookmarkUrl}>
-            {editingBookmarkId ? "Edit" : "Add"}
+            {editingBookmarkId ? translate("edit") : translate("add")}
           </Button>
         </Stack>
       </form>

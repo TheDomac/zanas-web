@@ -31,7 +31,7 @@ export default {
   date_and_time: "Datum i vrijeme",
   laptop_title: "Novi i bolji početni ekran",
   laptop_subtitle_1: "Isprobaj ga",
-  laptop_subtitle_2: " , sigurno će ti se svidjeti.",
+  laptop_subtitle_2: ", sigurno će ti se svidjeti.",
   donating_title: "Zarada ide unesrećenima",
   donating_subtitle:
     "Novac koji se prikupi od reklama na novom početnom ekranu i od dodatnih donacija šalje se ljudima u teškim situacijama.",
@@ -53,4 +53,9 @@ export default {
   details_section_subtitle_3:
     "Nadamo se da ti se sviđa ideja Zanas-a. Možeš nam pokazati svoju podršku tako da koristiš našu ekstenziju i pratiš naš rad.",
   details_section_subtitle_4: "Kontaktiraj nas bilo kad na info@zanas.net",
+  bookmark_placeholder: "https://www.primjer.com/",
+  new_bookmark: "Nova poveznica",
+  add: "Dodaj",
+  cancel: "Odustani",
+  edit: "Uredi",
 };

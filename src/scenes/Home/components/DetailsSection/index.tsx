@@ -31,8 +31,20 @@ const DetailsSection = () => {
             <Popover
               content={
                 <PopoverContainer>
-                  <FacebookIcon size="large" />
-                  <Icon src={RedditLogo} alt="reddit" />
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.facebook.com/groups/174188824298125"
+                  >
+                    <FacebookIcon size="large" customColor="black" />
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noreferrer"
+                    href="https://www.reddit.com/r/zanas/"
+                  >
+                    <Icon src={RedditLogo} alt="reddit" />
+                  </a>
                 </PopoverContainer>
               }
             >

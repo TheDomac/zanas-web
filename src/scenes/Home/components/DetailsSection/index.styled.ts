@@ -9,9 +9,11 @@ export const PopoverContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-end;
 `;
 
 export const Icon = styled.img`
   max-width: 24px;
+  width: 24px;
   height: auto;
 `;

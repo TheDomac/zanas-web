@@ -53,4 +53,9 @@ export default {
   details_section_subtitle_3:
     "We hope you like the idea behind Zanas. You can show us your support by using the extension and following our work.",
   details_section_subtitle_4: "Contact us anytime at info@zanas.net",
+  bookmark_placeholder: "https://www.example.com/",
+  new_bookmark: "New Bookmark",
+  add: "Add",
+  cancel: "Cancel",
+  edit: "Edit",
 };
