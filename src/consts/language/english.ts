@@ -58,4 +58,5 @@ export default {
   add: "Add",
   cancel: "Cancel",
   edit: "Edit",
+  homepage: "Homepage",
 };

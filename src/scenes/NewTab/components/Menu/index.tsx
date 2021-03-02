@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import { useHistory } from "react-router";
 
 import Popover from "@kiwicom/orbit-components/lib/Popover";
 import ListChoice from "@kiwicom/orbit-components/lib/ListChoice";
@@ -7,12 +8,14 @@ import Separator from "@kiwicom/orbit-components/lib/Separator";
 
 import translate, { selectedLanguage } from "utils/translate";
 import { translateKeys } from "consts/language";
+import { routes } from "consts/routes";
 import { ClockContext } from "services/Clock";
 
 import { Wrapper, MenuIcon, MenuWrapper } from "./index.styled";
 import LanguageMenu from "./LanguageMenu";
 import DateTimeMenu from "./DateTimeMenu";
 import DonationsInfo from "./DonationsInfo";
+import SocialMediaLinks from "./SocialMediaLinks";
 
 const menuItems = {
   NONE: null,
@@ -25,6 +28,7 @@ const Menu = () => {
   const [selectedMenuItem, setSelectedMenuItem] = useState<string | null>(
     menuItems.NONE
   );
+  const history = useHistory();
 
   const fullDate = translate("format_month", { day, month, date });
 
@@ -49,6 +53,11 @@ const Menu = () => {
                   description={`${fullDate}, ${hoursMinutes}`}
                   onClick={() => setSelectedMenuItem(menuItems.DATE_TIME)}
                 />
+                <ListChoice
+                  title={translate("homepage")}
+                  onClick={() => history.push(routes.HOME)}
+                />
+                <SocialMediaLinks />
               </>
             )}
             {selectedMenuItem === menuItems.LANGUAGE && (

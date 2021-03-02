@@ -58,4 +58,5 @@ export default {
   add: "Dodaj",
   cancel: "Odustani",
   edit: "Uredi",
+  homepage: "Početna",
 };

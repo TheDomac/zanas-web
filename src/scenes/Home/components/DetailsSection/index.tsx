@@ -8,6 +8,7 @@ import FacebookIcon from "@kiwicom/orbit-components/lib/icons/Facebook";
 import RedditLogo from "images/redditIcon.svg";
 
 import translate from "utils/translate";
+import { socialMediaLinks } from "consts/socialMedia";
 
 import DownloadButtonGroup from "../DownloadButtonGroup";
 
@@ -34,14 +35,14 @@ const DetailsSection = () => {
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href="https://www.facebook.com/groups/174188824298125"
+                    href={socialMediaLinks.FACEBOOK}
                   >
-                    <FacebookIcon size="large" customColor="black" />
+                    <FacebookIcon size="large" customColor="#4a4a4a" />
                   </a>
                   <a
                     target="_blank"
                     rel="noreferrer"
-                    href="https://www.reddit.com/r/zanas/"
+                    href={socialMediaLinks.REDDIT}
                   >
                     <Icon src={RedditLogo} alt="reddit" />
                   </a>

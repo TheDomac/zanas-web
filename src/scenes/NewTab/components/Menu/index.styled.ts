@@ -43,3 +43,15 @@ export const MenuItemTitleWrapper = styled.div`
     margin-right: 8px;
   }
 `;
+
+export const Icon = styled.img`
+  max-width: 18px;
+  width: 18px;
+  height: auto;
+  position: relative;
+  top: 1px;
+`;
+
+export const SocialMediaWrapper = styled.div`
+  padding: 12px 16px;
+`;
