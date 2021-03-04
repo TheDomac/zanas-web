@@ -6,6 +6,7 @@ import CheckItOutSection from "./components/CheckItOutSection";
 import DonatingSection from "./components/DonatingSection";
 import SoFarDonated from "./components/SoFarDonated";
 import DetailsSection from "./components/DetailsSection";
+import Footer from "./components/Footer";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <CheckItOutSection />
       <DonatingSection />
       <DetailsSection />
+      <Footer />
     </>
   );
 };
