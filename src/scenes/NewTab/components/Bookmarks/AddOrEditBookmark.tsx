@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-import cookies from "js-cookie";
 
 import InputField from "@kiwicom/orbit-components/lib/InputField";
 import Stack from "@kiwicom/orbit-components/lib/Stack";
 
-import { cookiesTypes } from "consts/cookies";
+import { keys } from "consts/localStorage";
 import { AddOrEditBookmarkWrapper, Button } from "./index.styled";
 
-import translate from "utils/translate";
+import useTranslate from "utils/useTranslate";
 
 const AddOrEditBookmark = ({
   isAddOrEditBookmarkShown,
@@ -18,7 +17,7 @@ const AddOrEditBookmark = ({
 }: any) => {
   const [bookmarkName, setBookmarkName] = useState("");
   const [bookmarkUrl, setBookmarkUrl] = useState("");
-
+  const translate = useTranslate();
   const editingBookmark = bookmarks.find(
     (bookmark: any) => bookmark.id === editingBookmarkId
   );
@@ -41,10 +40,7 @@ const AddOrEditBookmark = ({
     const newBookmarks = [...bookmarks, newBookmark];
 
     setBookmarks(newBookmarks);
-    cookies.set(cookiesTypes.BOOKMARKS, JSON.stringify(newBookmarks), {
-      expires: 365 * 10,
-      sameSite: "lax",
-    });
+    localStorage.setItem(keys.BOOKMARKS, JSON.stringify(newBookmarks));
     isAddOrEditBookmarkShown.setOff();
   };
 
@@ -60,10 +56,7 @@ const AddOrEditBookmark = ({
         : bookmark
     );
     setBookmarks(newBookmarks);
-    cookies.set(cookiesTypes.BOOKMARKS, JSON.stringify(newBookmarks), {
-      expires: 365 * 10,
-      sameSite: "lax",
-    });
+    localStorage.setItem(keys.BOOKMARKS, JSON.stringify(newBookmarks));
     setEditingBookmarkId(null);
     isAddOrEditBookmarkShown.setOff();
   };

@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 
 import { ClockContext } from "services/Clock";
-import translate from "utils/translate";
+import useTranslate from "utils/useTranslate";
 
 import { Wrapper, Time, DateWrapper } from "./index.styled";
 
 const Clock = () => {
   const { day, month, date, hoursMinutes } = useContext(ClockContext);
-
+  const translate = useTranslate();
   return (
     <Wrapper>
       <Time>{hoursMinutes}</Time>

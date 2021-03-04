@@ -6,12 +6,15 @@ import Tooltip from "@kiwicom/orbit-components/lib/Tooltip";
 import Stack from "@kiwicom/orbit-components/lib/Stack";
 
 import { DonationsInfoContext } from "services/DonationsInfo";
-import translate from "utils/translate";
-import getAmount from "utils/getAmount";
+import useTranslate from "utils/useTranslate";
+import useAmount from "utils/useAmount";
 
 import { DonationsInfoWrapper, CustomHeading } from "./index.styled";
 
 const Menu = () => {
+  const translate = useTranslate();
+  const getAmount = useAmount();
+
   const {
     state: { donationsInfoData, donationsInfoError, donationsInfoLoading },
     loadDonationsInfo,

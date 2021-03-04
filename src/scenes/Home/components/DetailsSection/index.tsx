@@ -7,7 +7,7 @@ import FacebookIcon from "@kiwicom/orbit-components/lib/icons/Facebook";
 
 import RedditLogo from "images/redditIcon.svg";
 
-import translate from "utils/translate";
+import useTranslate from "utils/useTranslate";
 import { socialMediaLinks } from "consts/socialMedia";
 
 import DownloadButtonGroup from "../DownloadButtonGroup";
@@ -16,6 +16,7 @@ import { CustomHeading, CustomHeadingSubtitle } from "../../index.styled";
 
 import { PopoverContainer, Icon, Wrapper } from "./index.styled";
 const DetailsSection = () => {
+  const translate = useTranslate();
   return (
     <Wrapper>
       <Stack direction="column" align="center" spacing="large">

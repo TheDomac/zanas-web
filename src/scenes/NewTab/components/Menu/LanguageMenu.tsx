@@ -1,5 +1,4 @@
-import React from "react";
-import cookies from "js-cookie";
+import React, { useContext } from "react";
 
 import ListChoice from "@kiwicom/orbit-components/lib/ListChoice";
 import Text from "@kiwicom/orbit-components/lib/Text";
@@ -9,21 +8,17 @@ import ChevronLeftIcon from "@kiwicom/orbit-components/lib/icons/ChevronLeft";
 import CircleEmptyIcon from "@kiwicom/orbit-components/lib/icons/CircleEmpty";
 import CheckCircleIcon from "@kiwicom/orbit-components/lib/icons/CheckCircle";
 
-import translate, { selectedLanguage } from "utils/translate";
+import useTranslate from "utils/useTranslate";
 import { languages, translateKeys } from "consts/language";
-import { cookiesTypes } from "consts/cookies";
+import { LanguageContext } from "services/Language";
 
 import { MenuItemTitleWrapper } from "./index.styled";
 
 const LanguageMenu = ({ setSelectedMenuItem, menuItems }: any) => {
-  const handleLanguageChange = (language: string) => {
-    cookies.set(cookiesTypes.LANGUAGE, language, {
-      expires: 365,
-      sameSite: "lax",
-    });
-    // eslint-disable-next-line no-restricted-globals
-    location.reload();
-  };
+  const translate = useTranslate();
+  const { selectedLanguage, handleLanguageChange } = useContext(
+    LanguageContext
+  );
 
   return (
     <>

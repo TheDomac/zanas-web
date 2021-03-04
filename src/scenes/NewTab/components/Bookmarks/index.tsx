@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import cookies from "js-cookie";
 
 import PlusIcon from "@kiwicom/orbit-components/lib/icons/Plus";
 
 import { useToggle } from "utils/useToggle";
-import translate from "utils/translate";
-import { cookiesTypes } from "consts/cookies";
+import useTranslate from "utils/useTranslate";
+import { keys } from "consts/localStorage";
 
 import { Wrapper, BookmarksWrapper, Button } from "./index.styled";
 
@@ -13,12 +12,13 @@ import Bookmark from "./Bookmark";
 import AddOrEditBookmark from "./AddOrEditBookmark";
 
 const getBookmarks = () => {
-  const bookmarks = cookies.get(cookiesTypes.BOOKMARKS);
+  const bookmarks = localStorage.getItem(keys.BOOKMARKS);
   const parsedBookmarks = bookmarks ? JSON.parse(bookmarks) : [];
   return parsedBookmarks;
 };
 
 const Bookmarks = () => {
+  const translate = useTranslate();
   const isAddOrEditBookmarkShown = useToggle();
   const [bookmarks, setBookmarks] = useState(getBookmarks());
   const [editingBookmarkId, setEditingBookmarkId] = useState(null);
@@ -28,10 +28,7 @@ const Bookmarks = () => {
       (bookmark: any) => bookmark.id !== bookmarkId
     );
     setBookmarks(newBookmarks);
-    cookies.set(cookiesTypes.BOOKMARKS, JSON.stringify(newBookmarks), {
-      expires: 365 * 10,
-      sameSite: "lax",
-    });
+    localStorage.setItem(keys.BOOKMARKS, JSON.stringify(newBookmarks));
   };
 
   return (

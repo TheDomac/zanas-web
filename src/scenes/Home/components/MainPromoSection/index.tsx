@@ -2,7 +2,7 @@ import React from "react";
 
 import Stack from "@kiwicom/orbit-components/lib/Stack";
 
-import translate from "utils/translate";
+import useTranslate from "utils/useTranslate";
 
 import largeLogo from "images/logo-large.png";
 
@@ -15,6 +15,8 @@ import {
 import DownloadButtonGroup from "../DownloadButtonGroup";
 
 const MainPromoSection = () => {
+  const translate = useTranslate();
+
   return (
     <WhiteWrapper paddingTop="140">
       <Stack direction="column" align="center" spacing="large">

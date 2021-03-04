@@ -1,9 +1,8 @@
 import React, { useState, useEffect, createContext } from "react";
-import cookies from "js-cookie";
 
 import { days, months, formats } from "consts/clock";
-import { cookiesTypes } from "consts/cookies";
-import translate from "utils/translate";
+import { keys } from "consts/localStorage";
+import useTranslate from "utils/useTranslate";
 
 export const ClockContext = createContext({
   day: "",
@@ -18,15 +17,12 @@ export const ClockContext = createContext({
 const ClockProvider = ({ children }: any) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [hoursMinutesFormat, setHoursMinutesFormat] = useState(
-    cookies.get(cookiesTypes.CLOCK_FORMAT) || formats.HOURS_MINUTES
+    localStorage.getItem(keys.CLOCK_FORMAT) || formats.HOURS_MINUTES
   );
-
+  const translate = useTranslate();
   const changeClockFormat = (newFormat: string) => {
     setHoursMinutesFormat(newFormat);
-    cookies.set(cookiesTypes.CLOCK_FORMAT, newFormat, {
-      expires: 365,
-      sameSite: "lax",
-    });
+    localStorage.setItem(keys.CLOCK_FORMAT, newFormat);
   };
 
   const tick = () => {

@@ -3,7 +3,7 @@ import React from "react";
 import Stack from "@kiwicom/orbit-components/lib/Stack";
 
 import personImg from "images/poor_person.jpg";
-import translate from "utils/translate";
+import useTranslate from "utils/useTranslate";
 
 import {
   WhiteWrapper,
@@ -14,6 +14,7 @@ import {
 } from "../../index.styled";
 
 const DonatingSection = () => {
+  const translate = useTranslate();
   return (
     <WhiteWrapper>
       <Stack

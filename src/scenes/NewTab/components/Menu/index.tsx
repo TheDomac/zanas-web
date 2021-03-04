@@ -6,10 +6,11 @@ import ListChoice from "@kiwicom/orbit-components/lib/ListChoice";
 import MenuKebabIcon from "@kiwicom/orbit-components/lib/icons/MenuKebab";
 import Separator from "@kiwicom/orbit-components/lib/Separator";
 
-import translate, { selectedLanguage } from "utils/translate";
+import useTranslate from "utils/useTranslate";
 import { translateKeys } from "consts/language";
 import { routes } from "consts/routes";
 import { ClockContext } from "services/Clock";
+import { LanguageContext } from "services/Language";
 
 import { Wrapper, MenuIcon, MenuWrapper } from "./index.styled";
 import LanguageMenu from "./LanguageMenu";
@@ -25,11 +26,12 @@ const menuItems = {
 
 const Menu = () => {
   const { day, month, date, hoursMinutes } = useContext(ClockContext);
+  const { selectedLanguage } = useContext(LanguageContext);
   const [selectedMenuItem, setSelectedMenuItem] = useState<string | null>(
     menuItems.NONE
   );
   const history = useHistory();
-
+  const translate = useTranslate();
   const fullDate = translate("format_month", { day, month, date });
 
   return (

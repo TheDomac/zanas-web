@@ -6,8 +6,8 @@ import Text from "@kiwicom/orbit-components/lib/Text";
 import Stack from "@kiwicom/orbit-components/lib/Stack";
 
 import { DonationsInfoContext } from "services/DonationsInfo";
-import translate from "utils/translate";
-import getAmount from "utils/getAmount";
+import useTranslate from "utils/useTranslate";
+import useAmount from "utils/useAmount";
 
 import { SoFarDonatedWrapper } from "./index.styled";
 
@@ -18,6 +18,9 @@ const SoFarDonated = () => {
     state: { donationsInfoData, donationsInfoLoading },
     loadDonationsInfo,
   } = useContext(DonationsInfoContext);
+
+  const translate = useTranslate();
+  const getAmount = useAmount();
 
   useEffect(() => {
     if (!donationsInfoData) {

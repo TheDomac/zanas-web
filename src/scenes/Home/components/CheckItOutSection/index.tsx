@@ -5,7 +5,7 @@ import TextLink from "@kiwicom/orbit-components/lib/TextLink";
 
 import { routes } from "consts/routes";
 import laptopImg from "images/laptop.png";
-import translate from "utils/translate";
+import useTranslate from "utils/useTranslate";
 
 import {
   GreyWrapper,
@@ -16,6 +16,7 @@ import {
 } from "../../index.styled";
 
 const CheckItOutSection = () => {
+  const translate = useTranslate();
   return (
     <GreyWrapper>
       <Stack
