@@ -64,7 +64,7 @@ const DetailsSection = () => {
         <CustomHeadingSubtitle centered inverted maxWidth="820">
           {translate("details_section_subtitle_4")}
         </CustomHeadingSubtitle>
-        <DownloadButtonGroup />
+        <DownloadButtonGroup textType="secondary" />
       </Stack>
     </Wrapper>
   );

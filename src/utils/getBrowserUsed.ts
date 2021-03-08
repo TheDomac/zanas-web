@@ -5,8 +5,6 @@ const getBrowserUsed = () => {
     return browsers.CHROME;
   } else if (navigator.userAgent.indexOf("Edge") !== -1) {
     return browsers.EDGE;
-  } else if (navigator.userAgent.indexOf("Firefox") !== -1) {
-    return browsers.FIREFOX;
   }
   return undefined;
 };

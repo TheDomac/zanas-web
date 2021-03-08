@@ -10,16 +10,21 @@ import ChevronDownIcon from "@kiwicom/orbit-components/lib/icons/ChevronDown";
 
 import useTranslate from "utils/useTranslate";
 import getBrowserUsed from "utils/getBrowserUsed";
-import { browsers } from "consts/browser";
+import { browsers, extensionLinks } from "consts/browser";
 
-const DownloadButtonGroup = () => {
+const DownloadButtonGroup = ({ textType = "primary" }: any) => {
   const browserUsed = getBrowserUsed();
   const translate = useTranslate();
+
+  const openLinkInNewTab = (link: string) => {
+    const win = window.open(link, "_blank");
+    win?.focus();
+  };
   return (
     <>
       {browserUsed && (
         <ButtonGroup>
-          <Button type="primary">
+          <Button type="primary" external href={extensionLinks[browserUsed]}>
             <Text uppercase type="white" weight="bold">
               {translate("add_to_browser", { browserUsed })}
             </Text>
@@ -30,20 +35,19 @@ const DownloadButtonGroup = () => {
               <>
                 {browserUsed !== browsers.CHROME && (
                   <ListChoice
+                    onClick={() => {
+                      openLinkInNewTab(extensionLinks[browsers.CHROME]);
+                    }}
                     title={translate("add_to_browser", {
                       browserUsed: browsers.CHROME,
                     })}
                   />
                 )}
-                {browserUsed !== browsers.FIREFOX && (
-                  <ListChoice
-                    title={translate("add_to_browser", {
-                      browserUsed: browsers.FIREFOX,
-                    })}
-                  />
-                )}
                 {browserUsed !== browsers.EDGE && (
                   <ListChoice
+                    onClick={() => {
+                      openLinkInNewTab(extensionLinks[browsers.EDGE]);
+                    }}
                     title={translate("add_to_browser", {
                       browserUsed: browsers.EDGE,
                     })}
@@ -59,9 +63,21 @@ const DownloadButtonGroup = () => {
       {!browserUsed && (
         <Text>
           {translate("available_on")}{" "}
-          <TextLink href="https://google.com">{translate("chrome")}</TextLink>,{" "}
-          <TextLink href="https://google.com">{translate("firefox")}</TextLink>,{" "}
-          <TextLink href="https://google.com">{translate("edge")}</TextLink>
+          <TextLink
+            type={textType}
+            href={extensionLinks[browsers.CHROME]}
+            external
+          >
+            {translate("chrome")}
+          </TextLink>
+          ,{" "}
+          <TextLink
+            href={extensionLinks[browsers.EDGE]}
+            external
+            type={textType}
+          >
+            {translate("edge")}
+          </TextLink>
         </Text>
       )}
     </>
