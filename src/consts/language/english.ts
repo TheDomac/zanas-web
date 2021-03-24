@@ -59,4 +59,7 @@ export default {
   cancel: "Cancel",
   edit: "Edit",
   homepage: "Homepage",
+  whitelist_url: "https://www.zanas.net/newtab",
+  problem_showing_ads:
+    "We are having problems showing ads. If you are using adblocker please whitelist this url:",
 };

@@ -59,4 +59,7 @@ export default {
   cancel: "Odustani",
   edit: "Uredi",
   homepage: "Početna",
+  whitelist_url: "https://www.zanas.net/newtab",
+  problem_showing_ads:
+    "Imamo problem s prikazivanjem reklama. Ako koristiš adblocker, molimo ugasi ga za sljedeći URL:",
 };

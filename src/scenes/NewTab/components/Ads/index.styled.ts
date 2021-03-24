@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const AdsWrapper = styled.div`
   position: fixed;
-  bottom: 7px;
-  right: 7px;
+  bottom: 10px;
+  right: 10px;
   transition: 300ms;
   opacity: 1;
   visibility: visible;
