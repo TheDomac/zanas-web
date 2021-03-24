@@ -48,7 +48,7 @@ const DonationsInfoProvider = ({ children }: any) => {
 
     try {
       fetch(
-        "https://spreadsheets.google.com/feeds/cells/16iLFWf5OiTka6cEszfCka9PAY-xqMKUXsoDhXNEif70/od6/public/basic?alt=json"
+        "https://spreadsheets.google.com/feeds/cells/1ZtBLRpVMjBdzyBAggZDDV9nbEPPw3DCeYINaucaVV5s/od6/public/basic?alt=json"
       ).then((r) =>
         r.json().then((response) => {
           dispatch({

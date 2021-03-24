@@ -11,10 +11,3 @@ export const AdsWrapper = styled.div`
 export const AdblockNotice = styled.div`
   max-width: 300px;
 `;
-
-export const AdBlockDetector = styled.div`
-  height: 1px;
-  width: 1px;
-  visibility: hidden;
-  pointer-events: none;
-`;
