@@ -7,18 +7,10 @@ import useTranslate from "utils/useTranslate";
 import shuffleArray from "utils/shuffleArray";
 import { DonationsInfoContext } from "services/DonationsInfo";
 import { keys } from "consts/localStorage";
+import amazonAdImg from "images/amazonAd.png";
 
 import { AdsWrapper, AdblockNotice } from "./index.styled";
 import { useToggle } from "utils/useToggle";
-
-const Iframe = ({ src }: any) => (
-  <iframe
-    src={src}
-    style={{ width: "120px", height: "240px", border: "none" }}
-    scrolling="no"
-    title="ad"
-  ></iframe>
-);
 
 const Ads = () => {
   const [shownAds, setShownAds] = useState<Array<any> | null>(null);
@@ -71,19 +63,21 @@ const Ads = () => {
     <AdsWrapper>
       <Stack direction="column" spacing="small">
         <Stack direction="row" justify="end">
-          <Iframe src={ad1Src} />
-          <Iframe src={ad2Src} />
+          <iframe
+            src={ad1Src}
+            style={{ width: "120px", height: "240px", border: "none" }}
+            scrolling="no"
+            title="ad"
+            ref={adblockDetector}
+          ></iframe>
+          <iframe
+            src={ad2Src}
+            style={{ width: "120px", height: "240px", border: "none" }}
+            scrolling="no"
+            title="ad"
+          ></iframe>
         </Stack>
-        <iframe
-          src="https://rcm-eu.amazon-adsystem.com/e/cm?o=3&p=26&l=ez&f=ifr&linkID={{link_id}}&t=zanas-21&tracking_id=zanas-21"
-          title="ad3"
-          width="468"
-          height="60"
-          scrolling="no"
-          style={{ border: "none" }}
-          ref={adblockDetector}
-        ></iframe>
-        {adBlock.isOn && (
+        {adBlock.isOn ? (
           <AdblockNotice>
             <Alert type="warning">
               {translate("problem_showing_ads")}
@@ -91,6 +85,14 @@ const Ads = () => {
               <p>{translate("whitelist_url")}</p>
             </Alert>
           </AdblockNotice>
+        ) : (
+          <a
+            href="https://www.amazon.de/?tag=zanas-21&linkCode=ez"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img alt="amazonAd" src={amazonAdImg} />
+          </a>
         )}
       </Stack>
     </AdsWrapper>

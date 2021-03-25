@@ -25,6 +25,7 @@ const AddOrEditBookmark = ({
   useEffect(() => {
     setBookmarkName(editingBookmark?.name || translate("new_bookmark"));
     setBookmarkUrl(editingBookmark?.url || "");
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [editingBookmark]);
 
   const changeName = (e: any) => setBookmarkName(e.target.value);
