@@ -1,5 +1,7 @@
 import React, { useReducer, createContext } from "react";
 
+import { keys } from "consts/localStorage";
+
 const initialState: any = {
   donationsInfoLoading: false,
   donationsInfoError: null,
@@ -21,12 +23,17 @@ const reducer = (state: any, action: any) => {
         donationsInfoError: null,
         donationsInfoData: null,
       };
-    case "LOAD_DONATIONS_INFO_SUCCESS":
+    case "LOAD_DONATIONS_INFO_SUCCESS": {
+      localStorage.setItem(
+        keys.ALL_ADS,
+        JSON.stringify(payload.response.allAds)
+      );
       return {
         ...state,
         donationsInfoLoading: false,
         donationsInfoData: payload.response,
       };
+    }
     case "LOAD_DONATIONS_INFO_FAILED":
       return {
         ...state,
