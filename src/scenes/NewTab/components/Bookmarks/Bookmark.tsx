@@ -31,6 +31,11 @@ const Bookmark = ({
     isPopoverOpen.setOff();
   };
 
+  const handleBookmarkClick = (url: string) => () => {
+    const parsedURL = url.startsWith("http") ? url : `http://${url}`;
+    window.open(parsedURL, "_blank")?.focus();
+  };
+
   return (
     <BookmarkWrapper>
       <OptionsWrapper>
@@ -49,13 +54,7 @@ const Bookmark = ({
           <MenuMeatballsIcon customColor="#1f7bb6" size="small" />
         </Popover>
       </OptionsWrapper>
-      <ExternalLink
-        href={
-          bookmark.url.startsWith("http")
-            ? bookmark.url
-            : `http://${bookmark.url}`
-        }
-      >
+      <ExternalLink onClick={handleBookmarkClick(bookmark.url)}>
         <Button>{bookmark.name}</Button>
       </ExternalLink>
     </BookmarkWrapper>
