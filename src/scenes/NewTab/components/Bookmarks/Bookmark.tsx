@@ -33,7 +33,7 @@ const Bookmark = ({
 
   const handleBookmarkClick = (url: string) => () => {
     const parsedURL = url.startsWith("http") ? url : `http://${url}`;
-    window.open(parsedURL, "_blank")?.focus();
+    window.open(parsedURL, "_self");
   };
 
   return (
