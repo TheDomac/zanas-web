@@ -12,6 +12,8 @@ import {
 } from "./index.styled";
 import { useToggle } from "utils/useToggle";
 
+const mouseClicks = ["_self", "_blank"];
+
 const Bookmark = ({
   bookmark,
   deleteBookmark,
@@ -31,9 +33,13 @@ const Bookmark = ({
     isPopoverOpen.setOff();
   };
 
-  const handleBookmarkClick = (url: string) => () => {
+  const handleBookmarkClick = (url: string) => (event: any) => {
     const parsedURL = url.startsWith("http") ? url : `http://${url}`;
-    window.open(parsedURL, "_self");
+
+    // left click = same tab, middle click = new tab
+    const windowOpenType = mouseClicks[event.button];
+
+    windowOpenType && window.open(parsedURL, windowOpenType);
   };
 
   return (
@@ -54,7 +60,7 @@ const Bookmark = ({
           <MenuMeatballsIcon customColor="#1f7bb6" size="small" />
         </Popover>
       </OptionsWrapper>
-      <ExternalLink onClick={handleBookmarkClick(bookmark.url)}>
+      <ExternalLink onMouseDown={handleBookmarkClick(bookmark.url)}>
         <Button>{bookmark.name}</Button>
       </ExternalLink>
     </BookmarkWrapper>
