@@ -12,7 +12,7 @@ import {
 } from "./index.styled";
 import { useToggle } from "utils/useToggle";
 
-const mouseClicks = ["_self", "_blank"];
+const mouseClicks = ["_parent", "_blank"];
 
 const Bookmark = ({
   bookmark,
@@ -38,7 +38,6 @@ const Bookmark = ({
 
     // left click = same tab, middle click = new tab
     const windowOpenType = mouseClicks[event.button];
-
     windowOpenType && window.open(parsedURL, windowOpenType);
   };
 
