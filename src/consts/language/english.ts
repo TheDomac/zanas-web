@@ -62,4 +62,10 @@ export default {
   whitelist_url: "https://www.zanas.net/newtab",
   problem_showing_ads:
     "We are having problems showing ads. If you are using adblocker please whitelist this url:",
+  games: "Games",
+  snake: "Snake",
+  game_over: "Game Over",
+  score: "Score: %score%",
+  high_score: "high-score: %highScore%",
+  space_to_play_again: "Press Space to play again",
 };

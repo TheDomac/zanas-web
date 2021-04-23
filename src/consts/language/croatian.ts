@@ -62,4 +62,10 @@ export default {
   whitelist_url: "https://www.zanas.net/newtab",
   problem_showing_ads:
     "Imamo problem s prikazivanjem reklama. Ako koristiš adblocker, molimo ugasi ga za sljedeći URL:",
+  games: "Igre",
+  snake: "Snake",
+  game_over: "Kraj igre",
+  score: "Bodovi: %score%",
+  high_score: "Rekord: %highScore%",
+  space_to_play_again: "Pritisni Space za novu igru",
 };

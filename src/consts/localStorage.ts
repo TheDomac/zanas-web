@@ -3,4 +3,5 @@ export const keys = {
   CLOCK_FORMAT: "clockFormat",
   LANGUAGE: "language",
   ALL_ADS: "allAds",
+  SNAKE_HIGH_SCORE: "snakeHighScore",
 };

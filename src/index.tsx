@@ -5,6 +5,7 @@ import App from "./App";
 import GlobalStyles from "./common/styles/globalStyles";
 
 import ClockProvider from "services/Clock";
+import SelectedScreenProvider from "services/SelectedScreen";
 import DonationsInfoProvider from "services/DonationsInfo";
 import LanguageProvider from "services/Language";
 
@@ -12,8 +13,10 @@ const AppWithProviders = () => (
   <LanguageProvider>
     <DonationsInfoProvider>
       <ClockProvider>
-        <GlobalStyles />
-        <App />
+        <SelectedScreenProvider>
+          <GlobalStyles />
+          <App />
+        </SelectedScreenProvider>
       </ClockProvider>
     </DonationsInfoProvider>
   </LanguageProvider>

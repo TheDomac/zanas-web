@@ -17,14 +17,18 @@ import LanguageMenu from "./LanguageMenu";
 import DateTimeMenu from "./DateTimeMenu";
 import DonationsInfo from "./DonationsInfo";
 import SocialMediaLinks from "./SocialMediaLinks";
+import GamesMenu from "./GamesMenu";
+import { useToggle } from "utils/useToggle";
 
 const menuItems = {
   NONE: null,
   LANGUAGE: "language",
   DATE_TIME: "date_time",
+  GAMES: "games",
 };
 
 const Menu = () => {
+  const menuOpen = useToggle();
   const { day, month, date, hoursMinutes } = useContext(ClockContext);
   const { selectedLanguage } = useContext(LanguageContext);
   const [selectedMenuItem, setSelectedMenuItem] = useState<string | null>(
@@ -34,17 +38,27 @@ const Menu = () => {
   const translate = useTranslate();
   const fullDate = translate("format_month", { day, month, date });
 
+  const handleMenuClose = () => {
+    setSelectedMenuItem(menuItems.NONE);
+    menuOpen.setOff();
+  };
   return (
     <Wrapper>
       <Popover
         noPadding
-        onClose={() => setSelectedMenuItem(menuItems.NONE)}
+        opened={menuOpen.isOn}
+        onOpen={menuOpen.setOn}
+        onClose={handleMenuClose}
         content={
           <MenuWrapper>
             {selectedMenuItem === menuItems.NONE && (
               <>
                 <DonationsInfo />
                 <Separator spaceAfter="none" />
+                <ListChoice
+                  title={translate("games")}
+                  onClick={() => setSelectedMenuItem(menuItems.GAMES)}
+                />
                 <ListChoice
                   title={translate("language")}
                   description={translate(translateKeys[selectedLanguage])}
@@ -72,6 +86,13 @@ const Menu = () => {
               <DateTimeMenu
                 menuItems={menuItems}
                 setSelectedMenuItem={setSelectedMenuItem}
+              />
+            )}
+            {selectedMenuItem === menuItems.GAMES && (
+              <GamesMenu
+                menuItems={menuItems}
+                setSelectedMenuItem={setSelectedMenuItem}
+                handleMenuClose={handleMenuClose}
               />
             )}
           </MenuWrapper>
