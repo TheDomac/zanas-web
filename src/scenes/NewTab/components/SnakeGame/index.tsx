@@ -14,6 +14,7 @@ import {
   ROWS,
   DIRECTIONS,
   MOVE_INTERVAL,
+  MOVE_INTERVAL_LIMIT,
   GRID_ITEM_SIZE,
 } from "consts/snakeGame";
 
@@ -31,6 +32,7 @@ const SnakeGame = () => {
   );
   const direction = useRef(DIRECTIONS.RIGHT);
   const directionChanged = useRef(false);
+  const moveInterval = useRef(MOVE_INTERVAL);
   const gameOver = useToggle();
   const [applePosition, setApplePosition] = useState(
     generateApplePosition(startSnake)
@@ -41,6 +43,7 @@ const SnakeGame = () => {
     gameOver.setOff();
     setSnake(startSnake);
     score.current = 0;
+    moveInterval.current = MOVE_INTERVAL;
     direction.current = DIRECTIONS.RIGHT;
     setApplePosition(generateApplePosition(startSnake));
   };
@@ -89,6 +92,9 @@ const SnakeGame = () => {
         highScore.current = score.current;
         localStorage.setItem(keys.SNAKE_HIGH_SCORE, String(score.current));
       }
+      if (moveInterval.current > MOVE_INTERVAL_LIMIT) {
+        moveInterval.current -= 1;
+      }
     }
   };
 
@@ -100,7 +106,7 @@ const SnakeGame = () => {
         tryToEatApple();
         directionChanged.current = false;
       }
-    }, MOVE_INTERVAL);
+    }, moveInterval.current);
     return () => {
       clearTimeout(timer);
     };
@@ -145,6 +151,7 @@ const SnakeGame = () => {
           <SnakePart
             key={i}
             style={{
+              zIndex: i === 0 ? 2 : 0,
               transform: `translate(
                 ${Xpos * GRID_ITEM_SIZE}px,
                 ${Ypos * GRID_ITEM_SIZE}px

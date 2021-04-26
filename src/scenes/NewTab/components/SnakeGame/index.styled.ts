@@ -27,4 +27,5 @@ export const Apple = styled.div`
   background: ${getRandomColor()};
   width: ${GRID_ITEM_SIZE}px;
   height: ${GRID_ITEM_SIZE}px;
+  z-index: 1;
 `;

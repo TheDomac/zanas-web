@@ -20,4 +20,5 @@ export const DIRECTIONS = {
   DOWN: "down",
 };
 
-export const MOVE_INTERVAL = 50;
+export const MOVE_INTERVAL = 75;
+export const MOVE_INTERVAL_LIMIT = 50;

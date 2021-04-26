@@ -66,6 +66,6 @@ export default {
   snake: "Snake",
   game_over: "Game Over",
   score: "Score: %score%",
-  high_score: "high-score: %highScore%",
+  high_score: "High score: %highScore%",
   space_to_play_again: "Press Space to play again",
 };

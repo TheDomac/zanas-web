@@ -12,19 +12,17 @@ import { routes } from "consts/routes";
 import { ClockContext } from "services/Clock";
 import { LanguageContext } from "services/Language";
 
-import { Wrapper, MenuIcon, MenuWrapper } from "./index.styled";
+import { MenuIcon, MenuWrapper } from "../../index.styled";
 import LanguageMenu from "./LanguageMenu";
 import DateTimeMenu from "./DateTimeMenu";
 import DonationsInfo from "./DonationsInfo";
 import SocialMediaLinks from "./SocialMediaLinks";
-import GamesMenu from "./GamesMenu";
 import { useToggle } from "utils/useToggle";
 
 const menuItems = {
   NONE: null,
   LANGUAGE: "language",
   DATE_TIME: "date_time",
-  GAMES: "games",
 };
 
 const Menu = () => {
@@ -43,66 +41,53 @@ const Menu = () => {
     menuOpen.setOff();
   };
   return (
-    <Wrapper>
-      <Popover
-        noPadding
-        opened={menuOpen.isOn}
-        onOpen={menuOpen.setOn}
-        onClose={handleMenuClose}
-        content={
-          <MenuWrapper>
-            {selectedMenuItem === menuItems.NONE && (
-              <>
-                <DonationsInfo />
-                <Separator spaceAfter="none" />
-                <ListChoice
-                  title={translate("games")}
-                  onClick={() => setSelectedMenuItem(menuItems.GAMES)}
-                />
-                <ListChoice
-                  title={translate("language")}
-                  description={translate(translateKeys[selectedLanguage])}
-                  onClick={() => setSelectedMenuItem(menuItems.LANGUAGE)}
-                />
-                <ListChoice
-                  title={translate("date_and_time")}
-                  description={`${fullDate}, ${hoursMinutes}`}
-                  onClick={() => setSelectedMenuItem(menuItems.DATE_TIME)}
-                />
-                <ListChoice
-                  title={translate("homepage")}
-                  onClick={() => history.push(routes.HOME)}
-                />
-                <SocialMediaLinks />
-              </>
-            )}
-            {selectedMenuItem === menuItems.LANGUAGE && (
-              <LanguageMenu
-                menuItems={menuItems}
-                setSelectedMenuItem={setSelectedMenuItem}
+    <Popover
+      noPadding
+      opened={menuOpen.isOn}
+      onOpen={menuOpen.setOn}
+      onClose={handleMenuClose}
+      content={
+        <MenuWrapper>
+          {selectedMenuItem === menuItems.NONE && (
+            <>
+              <DonationsInfo />
+              <Separator spaceAfter="none" />
+              <ListChoice
+                title={translate("language")}
+                description={translate(translateKeys[selectedLanguage])}
+                onClick={() => setSelectedMenuItem(menuItems.LANGUAGE)}
               />
-            )}
-            {selectedMenuItem === menuItems.DATE_TIME && (
-              <DateTimeMenu
-                menuItems={menuItems}
-                setSelectedMenuItem={setSelectedMenuItem}
+              <ListChoice
+                title={translate("date_and_time")}
+                description={`${fullDate}, ${hoursMinutes}`}
+                onClick={() => setSelectedMenuItem(menuItems.DATE_TIME)}
               />
-            )}
-            {selectedMenuItem === menuItems.GAMES && (
-              <GamesMenu
-                menuItems={menuItems}
-                setSelectedMenuItem={setSelectedMenuItem}
-                handleMenuClose={handleMenuClose}
+              <ListChoice
+                title={translate("homepage")}
+                onClick={() => history.push(routes.HOME)}
               />
-            )}
-          </MenuWrapper>
-        }
-      >
-        <MenuIcon>
-          <MenuKebabIcon customColor="white" />
-        </MenuIcon>
-      </Popover>
-    </Wrapper>
+              <SocialMediaLinks />
+            </>
+          )}
+          {selectedMenuItem === menuItems.LANGUAGE && (
+            <LanguageMenu
+              menuItems={menuItems}
+              setSelectedMenuItem={setSelectedMenuItem}
+            />
+          )}
+          {selectedMenuItem === menuItems.DATE_TIME && (
+            <DateTimeMenu
+              menuItems={menuItems}
+              setSelectedMenuItem={setSelectedMenuItem}
+            />
+          )}
+        </MenuWrapper>
+      }
+    >
+      <MenuIcon>
+        <MenuKebabIcon customColor="white" />
+      </MenuIcon>
+    </Popover>
   );
 };
 
