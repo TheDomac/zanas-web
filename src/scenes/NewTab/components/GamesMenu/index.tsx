@@ -23,9 +23,16 @@ const GamesMenu = () => {
     menuOpen.setOff();
   };
 
+  const handleSudokuClick = () => {
+    setSelectedScreen(screens.SUDOKU);
+    menuOpen.setOff();
+  };
+
   const snakeHighScore =
     Number(localStorage.getItem(keys.SNAKE_HIGH_SCORE)) || 0;
 
+  const sudokuNumberOfVictories =
+    Number(localStorage.getItem(keys.SUDOKU_NUMBER_OF_VICTORIES)) || 0;
   return (
     <Popover
       noPadding
@@ -39,6 +46,13 @@ const GamesMenu = () => {
             onClick={handleSnakeClick}
             description={translate("high_score", {
               highScore: snakeHighScore,
+            })}
+          />
+          <ListChoice
+            title={translate("sudoku")}
+            onClick={handleSudokuClick}
+            description={translate("number_of_victories", {
+              number: sudokuNumberOfVictories,
             })}
           />
         </MenuWrapper>

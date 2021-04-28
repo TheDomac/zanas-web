@@ -68,4 +68,11 @@ export default {
   score: "Bodovi: %score%",
   high_score: "Rekord: %highScore%",
   space_to_play_again: "Pritisni Space za novu igru",
+  sudoku: "Sudoku",
+  easy: "Lagano",
+  medium: "Srednje",
+  hard: "Teško",
+  erase: "Izbriši",
+  number_of_victories: "Broj pobjeda: %number%",
+  play_again: "Igraj ponovo",
 };

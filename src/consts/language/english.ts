@@ -68,4 +68,11 @@ export default {
   score: "Score: %score%",
   high_score: "High score: %highScore%",
   space_to_play_again: "Press Space to play again",
+  sudoku: "Sudoku",
+  easy: "Easy",
+  medium: "Medium",
+  hard: "Hard",
+  erase: "Erase",
+  number_of_victories: "Number of victories: %number%",
+  play_again: "Play again",
 };

@@ -7,7 +7,6 @@ export const CloseWrapper = styled.div`
   visibility: hidden;
   opacity: 0;
   transition: 300ms;
-  transition-delay: 500ms;
 `;
 
 export const Wrapper = styled.div`

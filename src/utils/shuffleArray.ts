@@ -1,12 +1,8 @@
 const shuffleArray = (array: any) => {
-  const length = array == null ? 0 : array.length;
-  if (!length) {
-    return [];
-  }
   let index = -1;
-  const lastIndex = length - 1;
+  const lastIndex = array.length - 1;
   const result = array.slice();
-  while (++index < length) {
+  while (++index < array.length) {
     const rand = index + Math.floor(Math.random() * (lastIndex - index + 1));
     const value = result[rand];
     result[rand] = result[index];
