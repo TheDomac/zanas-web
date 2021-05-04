@@ -141,7 +141,7 @@ const Sudoku = () => {
             <Button
               key={difficulty.key}
               size="large"
-              type="secondary"
+              type="primarySubtle"
               onClick={handleDifficultyClick(difficulty.cellsAmount)}
             >
               <Text size="large" type="secondary" weight="bold" align="center">

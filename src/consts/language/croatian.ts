@@ -65,7 +65,7 @@ export default {
   games: "Igre",
   snake: "Snake",
   game_over: "Kraj igre",
-  score: "Bodovi: %score%",
+  score_with_amount: "Bodovi: %score%",
   high_score: "Rekord: %highScore%",
   space_to_play_again: "Pritisni Space za novu igru",
   sudoku: "Sudoku",
@@ -75,4 +75,9 @@ export default {
   erase: "Izbriši",
   number_of_victories: "Broj pobjeda: %number%",
   play_again: "Igraj ponovo",
+  tetris: "Tetris",
+  score: "Bodovi",
+  rows: "Redovi",
+  level: "Nivo",
+  start_game: "Započni igru",
 };

@@ -65,7 +65,7 @@ export default {
   games: "Games",
   snake: "Snake",
   game_over: "Game Over",
-  score: "Score: %score%",
+  score_with_amount: "Score: %score%",
   high_score: "High score: %highScore%",
   space_to_play_again: "Press Space to play again",
   sudoku: "Sudoku",
@@ -75,4 +75,9 @@ export default {
   erase: "Erase",
   number_of_victories: "Number of victories: %number%",
   play_again: "Play again",
+  tetris: "Tetris",
+  score: "Score",
+  rows: "Rows",
+  level: "Level",
+  start_game: "Start Game",
 };

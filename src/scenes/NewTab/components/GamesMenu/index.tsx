@@ -18,16 +18,10 @@ const GamesMenu = () => {
   const translate = useTranslate();
   const { setSelectedScreen } = useContext(SelectedScreenContext);
 
-  const handleSnakeClick = () => {
-    setSelectedScreen(screens.SNAKE_GAME);
+  const handleGameClick = (screen: string) => () => {
+    setSelectedScreen(screen);
     menuOpen.setOff();
   };
-
-  const handleSudokuClick = () => {
-    setSelectedScreen(screens.SUDOKU);
-    menuOpen.setOff();
-  };
-
   const snakeHighScore =
     Number(localStorage.getItem(keys.SNAKE_HIGH_SCORE)) || 0;
 
@@ -42,15 +36,19 @@ const GamesMenu = () => {
       content={
         <MenuWrapper>
           <ListChoice
+            title={translate("tetris")}
+            onClick={handleGameClick(screens.TETRIS)}
+          />
+          <ListChoice
             title={translate("snake")}
-            onClick={handleSnakeClick}
+            onClick={handleGameClick(screens.SNAKE_GAME)}
             description={translate("high_score", {
               highScore: snakeHighScore,
             })}
           />
           <ListChoice
             title={translate("sudoku")}
-            onClick={handleSudokuClick}
+            onClick={handleGameClick(screens.SUDOKU)}
             description={translate("number_of_victories", {
               number: sudokuNumberOfVictories,
             })}

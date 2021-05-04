@@ -1,16 +1,11 @@
 import styled from "styled-components";
-import { GRID_ITEM_SIZE } from "consts/snakeGame";
+import { GRID_ITEM_SIZE, COLUMNS, ROWS } from "consts/snakeGame";
 
 import getRandomColor from "./utils/getRandomColor";
 
-interface GridProps {
-  width: number;
-  height: number;
-}
-
 export const Grid = styled.div`
-  width: ${(props: GridProps) => props.width}px;
-  height: ${(props: GridProps) => props.height}px;
+  width: ${GRID_ITEM_SIZE * COLUMNS}px;
+  height: ${GRID_ITEM_SIZE * ROWS}px;
   margin-bottom: 12px;
   border: 10px solid black;
 `;
