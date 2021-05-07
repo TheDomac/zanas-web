@@ -5,4 +5,5 @@ export const keys = {
   ALL_ADS: "allAds",
   SNAKE_HIGH_SCORE: "snakeHighScore",
   SUDOKU_NUMBER_OF_VICTORIES: "sudokuNumberOfVictories",
+  TETRIS_HIGH_SCORE: "tetrisHighScore",
 };

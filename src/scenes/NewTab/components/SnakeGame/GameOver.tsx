@@ -25,8 +25,8 @@ const GameOver = ({ resetGame, score, highScore }: any) => {
   return (
     <Stack direction="column" align="center" spacing="small">
       <Text size="large">{translate("game_over")}</Text>
-      <Text>{translate("score", { score })}</Text>
-      <Text>{translate("high_score", { highScore })}</Text>
+      <Text>{translate("score_with_amount", { score })}</Text>
+      <Text>{translate("high_score_with_amount", { highScore })}</Text>
       <Text>{translate("space_to_play_again")}</Text>
     </Stack>
   );

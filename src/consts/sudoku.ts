@@ -10,7 +10,7 @@ export const colors = {
 };
 
 export const DIFFICULTIES = [
-  { key: "easy", cellsAmount: 30 },
-  { key: "medium", cellsAmount: 25 },
-  { key: "hard", cellsAmount: 20 },
+  { key: "easy", cellsAmount: 35 },
+  { key: "medium", cellsAmount: 30 },
+  { key: "hard", cellsAmount: 25 },
 ];

@@ -12,6 +12,7 @@ import Menu from "./components/Menu";
 import GamesMenu from "./components/GamesMenu";
 import SnakeGame from "./components/SnakeGame";
 import Sudoku from "./components/Sudoku";
+import Tetris from "./components/Tetris";
 
 import { CornerWrapper } from "./index.styled";
 
@@ -23,6 +24,7 @@ const NewTab = () => {
       {!selectedScreen && <Clock />}
       {selectedScreen === screens.SNAKE_GAME && <SnakeGame />}
       {selectedScreen === screens.SUDOKU && <Sudoku />}
+      {selectedScreen === screens.TETRIS && <Tetris />}
       <CornerWrapper>
         <Stack direction="row" align="center">
           <GamesMenu />

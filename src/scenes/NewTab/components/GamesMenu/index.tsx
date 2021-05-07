@@ -18,21 +18,16 @@ const GamesMenu = () => {
   const translate = useTranslate();
   const { setSelectedScreen } = useContext(SelectedScreenContext);
 
-  const handleSnakeClick = () => {
-    setSelectedScreen(screens.SNAKE_GAME);
+  const handleGameClick = (screen: string) => () => {
+    setSelectedScreen(screen);
     menuOpen.setOff();
   };
-
-  const handleSudokuClick = () => {
-    setSelectedScreen(screens.SUDOKU);
-    menuOpen.setOff();
-  };
-
-  const snakeHighScore =
-    Number(localStorage.getItem(keys.SNAKE_HIGH_SCORE)) || 0;
+  const snakeHighScore = localStorage.getItem(keys.SNAKE_HIGH_SCORE) || 0;
 
   const sudokuNumberOfVictories =
-    Number(localStorage.getItem(keys.SUDOKU_NUMBER_OF_VICTORIES)) || 0;
+    localStorage.getItem(keys.SUDOKU_NUMBER_OF_VICTORIES) || 0;
+
+  const tetrisHighScore = localStorage.getItem(keys.TETRIS_HIGH_SCORE) || 0;
   return (
     <Popover
       noPadding
@@ -42,15 +37,22 @@ const GamesMenu = () => {
       content={
         <MenuWrapper>
           <ListChoice
+            title={translate("tetris")}
+            onClick={handleGameClick(screens.TETRIS)}
+            description={translate("high_score_with_amount", {
+              highScore: tetrisHighScore,
+            })}
+          />
+          <ListChoice
             title={translate("snake")}
-            onClick={handleSnakeClick}
-            description={translate("high_score", {
+            onClick={handleGameClick(screens.SNAKE_GAME)}
+            description={translate("high_score_with_amount", {
               highScore: snakeHighScore,
             })}
           />
           <ListChoice
             title={translate("sudoku")}
-            onClick={handleSudokuClick}
+            onClick={handleGameClick(screens.SUDOKU)}
             description={translate("number_of_victories", {
               number: sudokuNumberOfVictories,
             })}

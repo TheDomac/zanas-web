@@ -10,8 +10,6 @@ import useTranslate from "utils/useTranslate";
 
 import {
   startSnake,
-  COLUMNS,
-  ROWS,
   DIRECTIONS,
   MOVE_INTERVAL,
   MOVE_INTERVAL_LIMIT,
@@ -138,7 +136,7 @@ const SnakeGame = () => {
 
   return (
     <Screen>
-      <Grid width={GRID_ITEM_SIZE * COLUMNS} height={GRID_ITEM_SIZE * ROWS}>
+      <Grid>
         <Apple
           style={{
             transform: `translate(
@@ -161,9 +159,13 @@ const SnakeGame = () => {
         ))}
       </Grid>
       <Stack direction="row" justify="between">
-        <Text size="large">{translate("score", { score: score.current })}</Text>
         <Text size="large">
-          {translate("high_score", { highScore: highScore.current })}
+          {translate("score_with_amount", { score: score.current })}
+        </Text>
+        <Text size="large">
+          {translate("high_score_with_amount", {
+            highScore: highScore.current,
+          })}
         </Text>
       </Stack>
     </Screen>
