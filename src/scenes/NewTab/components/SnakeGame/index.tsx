@@ -163,7 +163,9 @@ const SnakeGame = () => {
           {translate("score_with_amount", { score: score.current })}
         </Text>
         <Text size="large">
-          {translate("high_score", { highScore: highScore.current })}
+          {translate("high_score_with_amount", {
+            highScore: highScore.current,
+          })}
         </Text>
       </Stack>
     </Screen>

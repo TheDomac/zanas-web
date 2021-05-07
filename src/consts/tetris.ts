@@ -1,89 +1,72 @@
-export const ROWS = 20;
-export const COLUMNS = 10;
-export const GRID_CELL_SIZE = 30;
-export const DROP_INTERVAL = 700;
+export const STAGE_HEIGHT = 18;
+export const STAGE_WIDTH = 10;
+export const PIXEL_SIZE = 30;
+export const initialMap = [...new Array(STAGE_HEIGHT)].map(() =>
+  [...new Array(STAGE_WIDTH)].map(() => ({ fill: 0, color: [] }))
+);
 
-export const cellStatuses = {
-  CLEAR: "clear",
-  MERGED: "merged",
+export const colors = [
+  "#e54b4b",
+  "#9a031e",
+  "#fcdc4d",
+  "#005397",
+  "#0bbcd6",
+  "#20ad65",
+  "#f8ebee",
+];
+
+export const I = {
+  bloco: [
+    [0, 0, 0, 0],
+    [1, 1, 1, 1],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+  ],
 };
 
-export const EMPTY = 0;
-
-export const TETROMINOS_NAMES = {
-  I: "I",
-  J: "J",
-  L: "L",
-  O: "O",
-  S: "S",
-  T: "T",
-  Z: "Z",
+export const O = {
+  bloco: [
+    [1, 1],
+    [1, 1],
+  ],
 };
 
-export const TETROMINOS = {
-  [EMPTY]: { shape: [[0]], color: "0, 0, 0" },
-  [TETROMINOS_NAMES.I]: {
-    shape: [
-      [0, "I", 0, 0],
-      [0, "I", 0, 0],
-      [0, "I", 0, 0],
-      [0, "I", 0, 0],
-    ],
-    color: "80, 227, 230",
-  },
-  [TETROMINOS_NAMES.J]: {
-    shape: [
-      [0, "J", 0],
-      [0, "J", 0],
-      ["J", "J", 0],
-    ],
-    color: "36, 95, 223",
-  },
-  [TETROMINOS_NAMES.L]: {
-    shape: [
-      [0, "L", 0],
-      [0, "L", 0],
-      [0, "L", "L"],
-    ],
-    color: "223, 173, 36",
-  },
-  [TETROMINOS_NAMES.O]: {
-    shape: [
-      ["O", "O"],
-      ["O", "O"],
-    ],
-    color: "223, 217, 36",
-  },
-  [TETROMINOS_NAMES.S]: {
-    shape: [
-      [0, "S", "S"],
-      ["S", "S", 0],
-      [0, 0, 0],
-    ],
-    color: "48, 211, 56",
-  },
-  [TETROMINOS_NAMES.T]: {
-    shape: [
-      [0, 0, 0],
-      ["T", "T", "T"],
-      [0, "T", 0],
-    ],
-    color: "132, 61, 198",
-  },
-  [TETROMINOS_NAMES.Z]: {
-    shape: [
-      ["Z", "Z", 0],
-      [0, "Z", "Z"],
-      [0, 0, 0],
-    ],
-    color: "227, 78, 78",
-  },
+export const T = {
+  bloco: [
+    [0, 0, 0],
+    [1, 1, 1],
+    [0, 1, 0],
+  ],
 };
 
-export const LINE_POINTS = [40, 100, 300, 1200];
+export const J = {
+  bloco: [
+    [0, 1, 0],
+    [0, 1, 0],
+    [1, 1, 0],
+  ],
+};
 
-export const gameStatuses = {
-  START: "start",
-  RUNNING: "running",
-  GAME_OVER: "game_over",
+export const L = {
+  bloco: [
+    [0, 1, 0],
+    [0, 1, 0],
+    [0, 1, 1],
+  ],
+};
+
+export const S = {
+  bloco: [
+    [0, 1, 1],
+    [1, 1, 0],
+    [0, 0, 0],
+  ],
+};
+
+export const Z = {
+  bloco: [
+    [1, 1, 0],
+    [0, 1, 1],
+    [0, 0, 0],
+  ],
 };
