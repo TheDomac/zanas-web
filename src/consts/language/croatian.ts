@@ -67,7 +67,7 @@ export default {
   game_over: "Kraj igre",
   score_with_amount: "Bodovi: %score%",
   high_score: "Rekord",
-  high_score_with_amount: "Rekord: %highScore%",
+  high_score_with_amount: "Rekord: %amount%",
   space_to_play_again: "Pritisni Space za novu igru",
   sudoku: "Sudoku",
   easy: "Lagano",

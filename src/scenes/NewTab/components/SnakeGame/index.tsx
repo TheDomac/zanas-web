@@ -164,7 +164,7 @@ const SnakeGame = () => {
         </Text>
         <Text size="large">
           {translate("high_score_with_amount", {
-            highScore: highScore.current,
+            amount: highScore.current,
           })}
         </Text>
       </Stack>

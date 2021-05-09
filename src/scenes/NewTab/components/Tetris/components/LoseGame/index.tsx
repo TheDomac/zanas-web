@@ -22,7 +22,7 @@ const LoseGame = ({ status, restartClick }: any) => {
         {translate("lines_cleared_with_amount", { amount: status.lines })}
       </Text>
       <Text size="small">
-        {translate("high_score_with_amount", { highScore: status.highScore })}
+        {translate("high_score_with_amount", { amount: status.highScore })}
       </Text>
       <Button onClick={restartClick}>{translate("restart")}</Button>
     </Stack>

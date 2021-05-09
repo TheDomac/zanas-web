@@ -28,6 +28,7 @@ const GamesMenu = () => {
     localStorage.getItem(keys.SUDOKU_NUMBER_OF_VICTORIES) || 0;
 
   const tetrisHighScore = localStorage.getItem(keys.TETRIS_HIGH_SCORE) || 0;
+
   return (
     <Popover
       noPadding
@@ -40,14 +41,14 @@ const GamesMenu = () => {
             title={translate("tetris")}
             onClick={handleGameClick(screens.TETRIS)}
             description={translate("high_score_with_amount", {
-              highScore: tetrisHighScore,
+              amount: tetrisHighScore,
             })}
           />
           <ListChoice
             title={translate("snake")}
             onClick={handleGameClick(screens.SNAKE_GAME)}
             description={translate("high_score_with_amount", {
-              highScore: snakeHighScore,
+              amount: snakeHighScore,
             })}
           />
           <ListChoice
