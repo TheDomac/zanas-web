@@ -47,6 +47,7 @@ const SnakeGame = () => {
   };
 
   const handleKeyDown = (event: any) => {
+    event.preventDefault();
     if (!directionChanged.current) {
       direction.current =
         getNewDirection(event.keyCode, direction.current) || direction.current;

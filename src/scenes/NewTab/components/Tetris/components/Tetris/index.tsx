@@ -139,7 +139,10 @@ const Tetris = () => {
     });
   };
 
-  const keyDown = ({ keyCode }) => {
+  const keyDown = (event) => {
+    console.log(event);
+    event.preventDefault();
+    const { keyCode } = event;
     if (pause || gameOver.isOn) return;
     switch (keyCode) {
       case 37:
