@@ -85,4 +85,5 @@ export default {
   lines_cleared: "Očišćenih linija",
   lines_cleared_with_amount: "Očišćenih linija: %amount%",
   restart: "Igraj ponovo",
+  minesweeper: "Minolovac",
 };

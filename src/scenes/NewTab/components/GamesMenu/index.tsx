@@ -38,6 +38,10 @@ const GamesMenu = () => {
       content={
         <MenuWrapper>
           <ListChoice
+            title={translate("minesweeper")}
+            onClick={handleGameClick(screens.MINESWEEPER)}
+          />
+          <ListChoice
             title={translate("tetris")}
             onClick={handleGameClick(screens.TETRIS)}
             description={translate("high_score_with_amount", {

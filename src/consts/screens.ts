@@ -3,4 +3,5 @@ export const screens = {
   SNAKE_GAME: "snake_game",
   SUDOKU: "sudoku",
   TETRIS: "tetris",
+  MINESWEEPER: "minesweeper",
 };
