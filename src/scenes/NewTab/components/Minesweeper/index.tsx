@@ -1,50 +1,78 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 
 import Screen from "common/components/Screen";
-import { EMPTY_BOARD } from "consts/minesweeper";
+import {
+  CODES,
+  GAME,
+  ROWS,
+  COLUMNS,
+  NUMBER_OF_MINES,
+} from "consts/minesweeper";
 
-import { Row, Cell } from "./index.styled";
-import generateGame from "./utils/generateGame";
-import getUpdatedGame from "./utils/getUpdatedGame";
+import initBoard from "./utils/initBoard";
+import expandOpenedCell from "./utils/expandOpenedCell";
+import { Wrapper } from "./index.styled";
+import Cell from "./Cell";
 
 const Minesweeper = () => {
-  const [game, setGame] = useState<any>(EMPTY_BOARD);
-  const firstClickHappened = useRef(false);
+  const [gameState, setGameState] = useState(GAME.READY);
+  const [boardData, setBoardData] = useState(initBoard());
+  const [openedCellCount, setOpenedCellCount] = useState(0);
 
-  const handleGameStart = (x: number, y: number) => {
-    const newGame = generateGame(x, y);
-    setGame(newGame);
-  };
+  const openCell = (x: number, y: number) => {
+    console.log("start", x, y);
+    const cellCode = boardData[y][x];
+    console.log("cellCod", cellCode, cellCode === CODES.NOTHING);
+    let newGameState = GAME.RUN;
 
-  const handleClick = (x: number, y: number) => () => {
-    if (!firstClickHappened.current) {
-      handleGameStart(x, y);
-      firstClickHappened.current = true;
-    } else {
-      const updatedGame = getUpdatedGame(game, x, y);
-      setGame(updatedGame);
+    if (cellCode === CODES.MINE) {
+      newGameState = GAME.LOSE;
+    } else if (cellCode === CODES.NOTHING) {
+      const expandResult = expandOpenedCell(boardData, x, y);
+      setBoardData(expandResult.boardData);
+      setOpenedCellCount(expandResult.openedCellCount);
+
+      if (ROWS * COLUMNS - NUMBER_OF_MINES === expandResult.openedCellCount) {
+        newGameState = GAME.WIN;
+      }
     }
+
+    setGameState(newGameState);
   };
 
+  const rotateCellState = () => {};
+
+  console.log("gameState", gameState);
+  console.log("boardData", boardData);
   return (
     <Screen>
-      {game.map((row: any, y: number) => (
-        <Row key={y}>
-          {row.map((cell: any, x: number) => (
+      <Wrapper>
+        {/* {Array.from(Array(ROWS * COLUMNS).keys()).map((v, i) => (
+          <Cell
+            gameState={gameState}
+            key={i}
+            x={i % ROWS}
+            y={Math.floor(i / COLUMNS)}
+            boardData={boardData}
+            openCell={openCell}
+            rotateCellState={rotateCellState}
+          />
+        ))} */}
+
+        {boardData.map((row, j) =>
+          row.map((cell: any, i: number) => (
             <Cell
-              key={x}
-              onClick={handleClick(x, y)}
-              isHidden={cell.isHidden}
-              isMine={cell.isMine}
-            >
-              {cell.isMine && "M"}
-              {!cell.isMine &&
-                cell.numberOfMinesAroundCell > 0 &&
-                cell.numberOfMinesAroundCell}
-            </Cell>
-          ))}
-        </Row>
-      ))}
+              key={i}
+              x={i}
+              y={j}
+              gameState={gameState}
+              boardData={boardData}
+              openCell={openCell}
+              rotateCellState={rotateCellState}
+            />
+          ))
+        )}
+      </Wrapper>
     </Screen>
   );
 };
