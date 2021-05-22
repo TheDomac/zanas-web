@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 
 import Screen from "common/components/Screen";
 import {
@@ -11,54 +11,49 @@ import {
 
 import initBoard from "./utils/initBoard";
 import expandOpenedCell from "./utils/expandOpenedCell";
+import getNextCellCode from "./utils/getNextCellCode";
 import { Wrapper } from "./index.styled";
 import Cell from "./Cell";
 
+const board = initBoard();
 const Minesweeper = () => {
   const [gameState, setGameState] = useState(GAME.READY);
-  const [boardData, setBoardData] = useState(initBoard());
-  const [openedCellCount, setOpenedCellCount] = useState(0);
-
+  const [boardData, setBoardData] = useState(board);
   const openCell = (x: number, y: number) => {
-    console.log("start", x, y);
+    console.log(2);
     const cellCode = boardData[y][x];
-    console.log("cellCod", cellCode, cellCode === CODES.NOTHING);
     let newGameState = GAME.RUN;
 
     if (cellCode === CODES.MINE) {
       newGameState = GAME.LOSE;
     } else if (cellCode === CODES.NOTHING) {
-      const expandResult = expandOpenedCell(boardData, x, y);
-      setBoardData(expandResult.boardData);
-      setOpenedCellCount(expandResult.openedCellCount);
+      const newBoardData = expandOpenedCell(boardData, x, y);
+      setBoardData(newBoardData);
 
-      if (ROWS * COLUMNS - NUMBER_OF_MINES === expandResult.openedCellCount) {
-        newGameState = GAME.WIN;
-      }
+      // if (ROWS * COLUMNS - NUMBER_OF_MINES === expandResult.openedCellCount) {
+      //   newGameState = GAME.WIN;
+      // }
     }
 
     setGameState(newGameState);
   };
 
-  const rotateCellState = () => {};
+  const onRightClickBoard = useCallback((e) => {
+    e.preventDefault();
+  }, []);
 
-  console.log("gameState", gameState);
-  console.log("boardData", boardData);
+  const rotateCellState = (x: number, y: number) => {
+    const code = boardData[y][x];
+    if (code !== CODES.OPENED) {
+      const newBoardData = boardData.slice();
+      newBoardData[y][x] = getNextCellCode(code);
+      setBoardData(newBoardData);
+    }
+  };
+
   return (
     <Screen>
-      <Wrapper>
-        {/* {Array.from(Array(ROWS * COLUMNS).keys()).map((v, i) => (
-          <Cell
-            gameState={gameState}
-            key={i}
-            x={i % ROWS}
-            y={Math.floor(i / COLUMNS)}
-            boardData={boardData}
-            openCell={openCell}
-            rotateCellState={rotateCellState}
-          />
-        ))} */}
-
+      <Wrapper onContextMenu={onRightClickBoard}>
         {boardData.map((row, j) =>
           row.map((cell: any, i: number) => (
             <Cell

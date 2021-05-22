@@ -26,9 +26,12 @@ export const StyledCell = styled.div`
       case CODES.MINE_QUESTION:
         return "#44D580";
       default:
-        return "white";
+        return "#e5f4fe";
     }
   }};
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
   border-radius: 5px;
   box-sizing: border-box;
@@ -54,7 +57,6 @@ export const StyledCell = styled.div`
         return "black";
     }
   }};
-  display: block;
   font-size: ${({ cellCode }: CellProps) => (cellCode > 0 ? 20 : 18)}px;
   font-weight: bold;
   margin: 2px;

@@ -57,7 +57,6 @@ const Cell = ({
 
   const onClickCell = useCallback(() => {
     if (gameState === GAME.READY || gameState === GAME.RUN) {
-      console.log(1);
       openCell(x, y);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -81,7 +80,7 @@ const Cell = ({
       onClick={onClickCell}
       onContextMenu={onRightClickCell}
     >
-      {getCellText(boardData[y][x])}
+      <span>{getCellText(boardData[y][x])}</span>
     </StyledCell>
   );
 };
