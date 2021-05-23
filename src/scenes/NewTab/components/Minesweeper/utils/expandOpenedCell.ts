@@ -29,7 +29,7 @@ const getMineCount = (boardData: any, x: number, y: number) => {
 };
 
 const expandOpenedCell = (oldBoardData: any, xPos: number, yPos: number) => {
-  const boardData = oldBoardData.slice();
+  const boardData = [...oldBoardData];
   // Using DFS algorithm to expand
   const dfsSearch = (x: number, y: number) => {
     if (boardData[y][x] !== CODES.NOTHING) {

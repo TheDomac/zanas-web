@@ -21,3 +21,5 @@ export const CODES = {
   MINE_FLAG: -5,
   MINE_QUESTION: -6,
 };
+
+export const EMPTY_BOARD = Array(ROWS).fill(Array(COLUMNS).fill(CODES.NOTHING));
