@@ -86,4 +86,6 @@ export default {
   lines_cleared_with_amount: "Očišćenih linija: %amount%",
   restart: "Igraj ponovo",
   minesweeper: "Minolovac",
+  record_with_amount: "Rekord: %record%",
+  no_record: "nema rekorda",
 };

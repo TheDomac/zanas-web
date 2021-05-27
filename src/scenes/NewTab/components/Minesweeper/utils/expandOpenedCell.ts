@@ -1,4 +1,5 @@
 import { CODES } from "consts/minesweeper";
+import getUpdatedBoard from "./getUpdatedBoard";
 
 // Define function to get mine count
 const getMineCount = (boardData: any, x: number, y: number) => {
@@ -29,14 +30,16 @@ const getMineCount = (boardData: any, x: number, y: number) => {
 };
 
 const expandOpenedCell = (oldBoardData: any, xPos: number, yPos: number) => {
-  const boardData = [...oldBoardData];
+  let boardData = oldBoardData;
   // Using DFS algorithm to expand
   const dfsSearch = (x: number, y: number) => {
     if (boardData[y][x] !== CODES.NOTHING) {
       return;
     }
 
-    boardData[y][x] = getMineCount(boardData, x, y);
+    const mineCount = getMineCount(boardData, x, y);
+
+    boardData = getUpdatedBoard(boardData, x, y, mineCount);
 
     let aroundPoint: any = [];
     aroundPoint = boardData[y - 1]

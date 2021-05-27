@@ -2,7 +2,8 @@ import { CODES } from "consts/minesweeper";
 
 const getFlaggedCellsInRowCount = (row: any) =>
   row.reduce(
-    (prev: number, cell: number) => (cell === CODES.FLAG ? prev + 1 : prev),
+    (prev: number, cell: number) =>
+      [CODES.FLAG, CODES.MINE_FLAG].includes(cell) ? prev + 1 : prev,
     0
   );
 

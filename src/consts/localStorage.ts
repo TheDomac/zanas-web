@@ -6,4 +6,5 @@ export const keys = {
   SNAKE_HIGH_SCORE: "snakeHighScore",
   SUDOKU_NUMBER_OF_VICTORIES: "sudokuNumberOfVictories",
   TETRIS_HIGH_SCORE: "tetrisHighScore",
+  MINESWEEPER_RECORD: "minesweeperRecord",
 };

@@ -64,3 +64,7 @@ export const StyledCell = styled.div`
   width: 42px;
   height: 42px;
 `;
+
+export const Emoji = styled.span`
+  font-size: 30px;
+`;

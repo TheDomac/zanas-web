@@ -10,16 +10,18 @@ import {
   EMPTY_BOARD,
 } from "consts/minesweeper";
 import useInterval from "utils/useInterval";
+import { keys } from "consts/localStorage";
 
 import initBoard from "./utils/initBoard";
 import expandOpenedCell from "./utils/expandOpenedCell";
 import getNextCellCode from "./utils/getNextCellCode";
 import getOpenedCellCount from "./utils/getOpenedCellCount";
 import getFlagsCount from "./utils/getFlagsCount";
+import getUpdatedBoard from "./utils/getUpdatedBoard";
 import { Wrapper } from "./index.styled";
 import Cell from "./Cell";
+import Status from "./Status";
 
-// const board = initBoard();
 const Minesweeper = () => {
   const [gameState, setGameState] = useState(GAME.READY);
   const [boardData, setBoardData] = useState(EMPTY_BOARD);
@@ -48,6 +50,8 @@ const Minesweeper = () => {
     } else if (cellCode === CODES.NOTHING) {
       const newBoardData = expandOpenedCell(board, x, y);
       setBoardData(newBoardData);
+      const flagsCount = getFlagsCount(newBoardData);
+      setRemainingMinesCount(NUMBER_OF_MINES - flagsCount);
 
       if (
         ROWS * COLUMNS - NUMBER_OF_MINES ===
@@ -55,6 +59,10 @@ const Minesweeper = () => {
       ) {
         newGameState = GAME.WIN;
         interval.current = null;
+        const oldScore = localStorage.getItem(keys.MINESWEEPER_RECORD);
+        if (stopwatch < Number(oldScore) || !oldScore) {
+          localStorage.setItem(keys.MINESWEEPER_RECORD, String(stopwatch));
+        }
       }
     }
 
@@ -68,8 +76,8 @@ const Minesweeper = () => {
   const rotateCellState = (x: number, y: number) => {
     const code = boardData[y][x];
     if (code !== CODES.OPENED) {
-      const newBoardData = [...boardData];
-      newBoardData[y][x] = getNextCellCode(code);
+      const newCode = getNextCellCode(code);
+      const newBoardData = getUpdatedBoard(boardData, x, y, newCode);
       setBoardData(newBoardData);
 
       const flagsCount = getFlagsCount(newBoardData);
@@ -77,9 +85,22 @@ const Minesweeper = () => {
     }
   };
 
+  const restartGame = () => {
+    setGameState(GAME.READY);
+    setBoardData(EMPTY_BOARD);
+    setStopwatch(0);
+    setRemainingMinesCount(NUMBER_OF_MINES);
+    interval.current = null;
+  };
+
   return (
     <Screen>
-      {stopwatch} - {remainingMinesCount}
+      <Status
+        stopwatch={stopwatch}
+        remainingMinesCount={remainingMinesCount}
+        gameState={gameState}
+        restartGame={restartGame}
+      />
       <Wrapper onContextMenu={onRightClickBoard}>
         {boardData.map((row, j) =>
           row.map((cell: any, i: number) => (

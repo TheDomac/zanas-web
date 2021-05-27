@@ -86,4 +86,6 @@ export default {
   lines_cleared_with_amount: "Lines Cleared: %amount%",
   restart: "Restart",
   minesweeper: "Minesweeper",
+  record_with_amount: "Record: %record%",
+  no_record: "no record",
 };

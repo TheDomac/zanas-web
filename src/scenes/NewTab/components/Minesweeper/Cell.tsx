@@ -1,4 +1,4 @@
-import React, { memo, useCallback } from "react";
+import React, { memo } from "react";
 
 import { StyledCell } from "./index.styled";
 import { CODES, GAME } from "consts/minesweeper";
@@ -11,68 +11,61 @@ const Cell = ({
   openCell,
   rotateCellState,
 }: any) => {
-  const getCellText = useCallback(
-    (code) => {
-      switch (code) {
-        case CODES.OPENED:
-        case CODES.NOTHING:
-          return "";
-        case CODES.FLAG:
-          return "🚩";
-        case CODES.MINE_FLAG:
-          switch (gameState) {
-            case GAME.WIN:
-              return "💣";
-            case GAME.LOSE:
-              return "💥";
-            default:
-              return "🚩";
-          }
-        case CODES.QUESTION:
-          return "❔";
-        case CODES.MINE_QUESTION:
-          switch (gameState) {
-            case GAME.WIN:
-              return "💣";
-            case GAME.LOSE:
-              return "💥";
-            default:
-              return "❔";
-          }
-        case CODES.MINE:
-          switch (gameState) {
-            case GAME.WIN:
-              return "💣";
-            case GAME.LOSE:
-              return "💥";
-            default:
-              return "";
-          }
-        default:
-          return code;
-      }
-    },
-    [gameState]
-  );
+  const getCellText = (code: number) => {
+    switch (code) {
+      case CODES.OPENED:
+      case CODES.NOTHING:
+        return "";
+      case CODES.FLAG:
+        return "🚩";
+      case CODES.MINE_FLAG:
+        switch (gameState) {
+          case GAME.WIN:
+            return "💣";
+          case GAME.LOSE:
+            return "💥";
+          default:
+            return "🚩";
+        }
+      case CODES.QUESTION:
+        return "❔";
+      case CODES.MINE_QUESTION:
+        switch (gameState) {
+          case GAME.WIN:
+            return "💣";
+          case GAME.LOSE:
+            return "💥";
+          default:
+            return "❔";
+        }
+      case CODES.MINE:
+        switch (gameState) {
+          case GAME.WIN:
+            return "💣";
+          case GAME.LOSE:
+            return "💥";
+          default:
+            return "";
+        }
+      default:
+        return code;
+    }
+  };
 
-  const onClickCell = useCallback(() => {
+  const onClickCell = () => {
     if (gameState === GAME.READY || gameState === GAME.RUN) {
       openCell(x, y);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [gameState]);
+  };
 
-  const onRightClickCell = useCallback(
-    (e) => {
-      e.preventDefault();
+  const onRightClickCell = (e: any) => {
+    e.preventDefault();
 
-      if (gameState === GAME.READY || gameState === GAME.RUN) {
-        rotateCellState(x, y);
-      }
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [gameState]
-  );
+    if (gameState === GAME.READY || gameState === GAME.RUN) {
+      rotateCellState(x, y);
+    }
+  };
 
   return (
     <StyledCell

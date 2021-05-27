@@ -28,6 +28,8 @@ const GamesMenu = () => {
     localStorage.getItem(keys.SUDOKU_NUMBER_OF_VICTORIES) || 0;
 
   const tetrisHighScore = localStorage.getItem(keys.TETRIS_HIGH_SCORE) || 0;
+  const minesweeperRecord =
+    localStorage.getItem(keys.MINESWEEPER_RECORD) || translate("no_record");
 
   return (
     <Popover
@@ -40,6 +42,9 @@ const GamesMenu = () => {
           <ListChoice
             title={translate("minesweeper")}
             onClick={handleGameClick(screens.MINESWEEPER)}
+            description={translate("record_with_amount", {
+              record: minesweeperRecord,
+            })}
           />
           <ListChoice
             title={translate("tetris")}
