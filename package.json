@@ -2,6 +2,7 @@
   "name": "web",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://thedomac.github.io/zanas-web",
   "dependencies": {
     "@babel/core": "7.12.3",
     "@emotion/react": "^11.1.4",
@@ -84,6 +85,7 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "deploy": "gh-pages -d build",
     "test": "node scripts/test.js",
     "gen": "graphql-codegen --config codegen.yml"
   },
@@ -167,6 +169,7 @@
     "@types/styled-components": "^5.1.7",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
+    "gh-pages": "^3.2.3",
     "prettier": "^2.2.1"
   }
 }
