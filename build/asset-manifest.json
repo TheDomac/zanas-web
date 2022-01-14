@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.js": "/zanas-web/static/js/main.81524d1d.chunk.js",
-    "main.js.map": "/zanas-web/static/js/main.81524d1d.chunk.js.map",
+    "main.js": "/zanas-web/static/js/main.d0ea14ef.chunk.js",
+    "main.js.map": "/zanas-web/static/js/main.d0ea14ef.chunk.js.map",
     "runtime-main.js": "/zanas-web/static/js/runtime-main.7ab32e29.js",
     "runtime-main.js.map": "/zanas-web/static/js/runtime-main.7ab32e29.js.map",
-    "static/js/2.e3d24a8a.chunk.js": "/zanas-web/static/js/2.e3d24a8a.chunk.js",
-    "static/js/2.e3d24a8a.chunk.js.map": "/zanas-web/static/js/2.e3d24a8a.chunk.js.map",
+    "static/js/2.e39fec6b.chunk.js": "/zanas-web/static/js/2.e39fec6b.chunk.js",
+    "static/js/2.e39fec6b.chunk.js.map": "/zanas-web/static/js/2.e39fec6b.chunk.js.map",
     "static/js/3.d536e444.chunk.js": "/zanas-web/static/js/3.d536e444.chunk.js",
     "static/js/3.d536e444.chunk.js.map": "/zanas-web/static/js/3.d536e444.chunk.js.map",
     "index.html": "/zanas-web/index.html",
-    "static/js/2.e3d24a8a.chunk.js.LICENSE.txt": "/zanas-web/static/js/2.e3d24a8a.chunk.js.LICENSE.txt",
+    "static/js/2.e39fec6b.chunk.js.LICENSE.txt": "/zanas-web/static/js/2.e39fec6b.chunk.js.LICENSE.txt",
     "static/media/background.b7306361.svg": "/zanas-web/static/media/background.b7306361.svg",
     "static/media/gamepad.31f2d20d.svg": "/zanas-web/static/media/gamepad.31f2d20d.svg",
     "static/media/laptop.e0c84529.png": "/zanas-web/static/media/laptop.e0c84529.png",
@@ -19,7 +19,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.7ab32e29.js",
-    "static/js/2.e3d24a8a.chunk.js",
-    "static/js/main.81524d1d.chunk.js"
+    "static/js/2.e39fec6b.chunk.js",
+    "static/js/main.d0ea14ef.chunk.js"
   ]
 }

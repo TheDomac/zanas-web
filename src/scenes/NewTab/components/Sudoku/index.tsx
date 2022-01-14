@@ -54,7 +54,6 @@ const Sudoku = () => {
 
   const handleNumberClick = (number: number) => async () => {
     await updateGameAtSelectedField(number);
-    setSelectedCell(null);
   };
 
   const handleErase = () => {

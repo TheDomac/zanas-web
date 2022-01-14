@@ -2,6 +2,7 @@ import React from "react";
 
 import Stack from "@kiwicom/orbit-components/lib/Stack";
 import TextLink from "@kiwicom/orbit-components/lib/TextLink";
+import { Link } from "react-router-dom";
 
 import { routes } from "consts/routes";
 import laptopImg from "images/laptop.png";
@@ -31,9 +32,9 @@ const CheckItOutSection = () => {
           <Stack direction="column" inline>
             <CustomHeading>{translate("laptop_title")}</CustomHeading>
             <CustomHeadingSubtitle>
-              <TextLink external href={routes.NEW_TAB}>
-                {translate("laptop_subtitle_1")}
-              </TextLink>
+              <Link target="blank" to={routes.NEW_TAB}>
+                <TextLink>{translate("laptop_subtitle_1")}</TextLink>
+              </Link>
               {translate("laptop_subtitle_2")}
             </CustomHeadingSubtitle>
           </Stack>
