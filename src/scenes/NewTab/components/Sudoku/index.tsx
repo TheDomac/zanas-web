@@ -54,6 +54,11 @@ const Sudoku = () => {
 
   const handleNumberClick = (number: number) => async () => {
     await updateGameAtSelectedField(number);
+    const updatedSelectedCell = {
+      ...selectedCell,
+      value: number,
+    };
+    setSelectedCell(updatedSelectedCell);
   };
 
   const handleErase = () => {
